@@ -21,7 +21,7 @@ const Footer = () => {
             <NavLink to="/about" className="text-white font-semibold hover:underline">About Us</NavLink>
             <NavLink to="#" className="text-white font-semibold hover:underline">Careers</NavLink>
             <NavLink to="#" className="text-white font-semibold hover:underline">Partners</NavLink>
-            <NavLink to="#" className="text-white font-semibold hover:underline">Blog</NavLink>
+            <NavLink to="/blogs" className="text-white font-semibold hover:underline">Blog</NavLink>
             <NavLink to="/contact" className="text-white font-semibold hover:underline">Contact</NavLink>
           </nav>
         </div>

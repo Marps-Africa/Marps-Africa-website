@@ -28,23 +28,23 @@ const Contact = () => {
     setStatus('Sending...');
 
     const serviceID = 'service_13ygtrs';
-    const templateID = 'template_n21fa3e'; // Template for sending message to yourself
-    const confirmationTemplateID = 'template_6n8ui2t'; // Template for sending confirmation email to the user
+    const templateID = 'template_n21fa3e'; 
+    const confirmationTemplateID = 'template_6n8ui2t'; 
     const publicKey = 'L2_7PSPdo8vlmJqDm';
 
-    // Template parameters for the original email (sent to you or the recipient)
+   
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      to_name: 'Recipient Name', // Change as per your needs
+      to_name: 'Recipient Name', 
     };
 
-    // Template parameters for the confirmation email (sent to the user)
+ 
     const confirmationParams = {
-      from_name: formData.name, // User's name
-      to_email: formData.email, // User's email
-      reply_to: formData.email, // Reply-to address
+      from_name: formData.name, 
+      to_email: formData.email, 
+      reply_to: formData.email, 
     };
 
     // Send the original email first
@@ -69,7 +69,7 @@ const Contact = () => {
     <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white my-4 rounded-lg">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* Information Section */}
+     
         <div className="p-6">
           <h2 className="text-3xl font-bold text-blue-700">Let’s level up your project, together</h2>
           <p className="mt-4 text-gray-600">
@@ -90,19 +90,34 @@ const Contact = () => {
             </li>
           </ul>
 
-          {/* Embedded Map with Hover Effect */}
-          <div className="mt-6 hover:scale-105 transition-transform duration-300 ease-in-out">
-            <iframe
-              title="Nairobi CBD Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.46999383871!2d36.81704731387715!3d-1.283370999052714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10df672ab7c5%3A0x3ac11bfc0c9ac2f2!2sBazaar%20Plaza!5e0!3m2!1sen!2ske!4v1694793921856!5m2!1sen!2ske"
-              className="w-full h-64 border-0 rounded-lg shadow-md"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
+         
+  
+          <div className="mt-6 hover:scale-105 transition-transform duration-300 ease-in-out relative">
+                    <iframe
+                      title="Nairobi CBD Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.46999383871!2d36.81704731387715!3d-1.283370999052714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10df672ab7c5%3A0x3ac11bfc0c9ac2f2!2sBazaar%20Plaza!5e0!3m2!1sen!2ske!4v1694793921856!5m2!1sen!2ske"
+                      className="w-full h-64 border-0 rounded-lg shadow-md"
+                      allowFullScreen=""
+                      loading="lazy"
+                    ></iframe>
+
+                    <a
+                      href="https://www.google.com/maps/dir//Bazaar+Plaza,+Nairobi,+Kenya"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-2 right-2 flex items-center bg-white p-2 rounded-lg shadow-lg text-blue-600 hover:text-blue-800 font-semibold transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 mr-2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v3.75M3 12.75h3.75m8.25 0H21m-7.5 0V21m0-8.25L19.5 5.25" />
+                      </svg>
+                      View Directions to Bazaar Plaza
+                    </a>
+            </div>
+
+
         </div>
         
-        {/* Form Section */}
+      
         <div className="p-6 bg-gray-50 rounded-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -151,7 +166,7 @@ const Contact = () => {
               />
             </div>
             
-            {/* Right-Aligned Button */}
+      
             <button
               type="submit"
               disabled={isSubmitting}
@@ -163,7 +178,6 @@ const Contact = () => {
         </div>
       </div>
       
-      {/* Toast Container */}
       <ToastContainer />
     </div>
   );

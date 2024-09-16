@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img className="h-8 w-auto" src="logo.png" alt="Logo" />
+              <img className="h-8 w-auto" src="/images/5g-iot.jpeg" alt="Logo" />
             </div>
 
             <div className="hidden md:flex space-x-8 ml-10">
@@ -140,6 +140,8 @@ const Navbar = () => {
               >
                 Blog
               </NavLink>
+               
+              
               <NavLink
                 to="/contact"
                 className="text-gray-700 hover:text-black font-medium"
