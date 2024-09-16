@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import NoPage from "./pages/NoPage";
+import Book_Appoitment from "./pages/Book_Appoitment";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="appoitment" element = {<Book_Appoitment/>} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

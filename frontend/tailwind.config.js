@@ -6,13 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-      fontSize: {
-        '16xl': '8rem', // Define a custom size for text-16xl
-        '24xl': '8rem', // Define a larger custom size for text-24xl
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
   variants: {},
   plugins: [],
-}
-
+};
