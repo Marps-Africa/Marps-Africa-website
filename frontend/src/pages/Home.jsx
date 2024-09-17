@@ -45,6 +45,21 @@ function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // Adding the Tawk.to script dynamically using useEffect
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.tawk.to/66e8876f50c10f7a00ab4415/1i7u52331';
+    script.async = true;
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Clean up the script when the component is unmounted
+    };
+  }, []);
+
   return (
     <div className="relative w-full bg-slate-100">
       {/* Hero Section */}
@@ -135,7 +150,7 @@ function Home() {
 
           <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg flex flex-col  space-y-4">
             <img src={itsupport} alt="IT Support Icon" className="h-12 w-12" />
-            <h2 className="text-xl font-semibold">AI intergration</h2>
+            <h2 className="text-xl font-semibold">AI integration</h2>
             <p className="text-gray-600  ">
               We offer expert assistance for your IT issues.
             </p>
@@ -158,15 +173,15 @@ function Home() {
               Let's Build Your Website!
             </h2>
 
-            <button  className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-blue-500 rounded-xl group">
-<span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-blue-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-<span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-blue-100"></span>
-</span>
-<span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-blue-400 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-<span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Contact Us</span>
-</button>          </div>
+            <button  className=" pt-4 relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-blue-500 rounded-xl group">
+              <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-blue-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                <span className="absolute top-0 right-0 w-5 h-5 bg-white"></span>
+              </span>
+              <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out bg-blue-400 rounded-lg group-hover:mb-12"></span>
+              <span className="relative w-full text-white transition-colors duration-200 ease-in-out group-hover:text-white"> GET STARTED</span>
+            </button>
+          </div>
         </div>
-        
       </section>
     </div>
   );

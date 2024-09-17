@@ -5,7 +5,6 @@ import Layout from "./Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Blogs from "./pages/Blogs";
-import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -18,7 +17,6 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
-          <Route path="blogs/:id" element={<BlogPost />} />
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />

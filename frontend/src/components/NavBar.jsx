@@ -1,15 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import {
-  FaLaptopCode,
-  FaMobileAlt,
-  FaPalette,
-  FaShieldAlt,
-  FaChartBar,
-  FaSms,
-  FaLightbulb,
-  FaIndustry,
-} from "react-icons/fa";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { 
+  FaLaptopCode, FaMobileAlt, FaPalette
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,21 +53,15 @@ const Navbar = () => {
                     <li className="flex items-start p-2 bg-green-100 hover:bg-green-200">
                       <FaMobileAlt className="h-6 w-6 mr-2 text-green-700" />
                       <div>
-                        <h3 className="font-bold text-black">
-                          Mobile App Development
-                        </h3>
-                        <p className="text-gray-500 text-sm">
-                          We develop cross-platform mobile applications.
-                        </p>
+                        <h3 className="font-bold text-black">Mobile App Development</h3>
+                        <p className="text-gray-500 text-sm">We develop cross-platform mobile applications.</p>
                       </div>
                     </li>
                     <li className="flex items-start p-2 bg-green-300 hover:bg-green-400">
                       <FaPalette className="h-6 w-6 mr-2 text-green-700" />
                       <div>
                         <h3 className="font-bold text-black">Website Design</h3>
-                        <p className="text-gray-500 text-sm">
-                          Aesthetically pleasing website designs.
-                        </p>
+                        <p className="text-gray-500 text-sm">Aesthetically pleasing website designs.</p>
                       </div>
                     </li>
                     {/* More services... */}
