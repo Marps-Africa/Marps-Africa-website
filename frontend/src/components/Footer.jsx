@@ -18,7 +18,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-bold text-white mb-4">Company</h2>
           <nav className="flex flex-col space-y-2">
-            <NavLink to="/about" className="text-white font-semibold hover:underline">About Us</NavLink>
+            <NavLink to="#" className="text-white font-semibold hover:underline">About Us</NavLink>
             <NavLink to="#" className="text-white font-semibold hover:underline">Careers</NavLink>
             <NavLink to="#" className="text-white font-semibold hover:underline">Partners</NavLink>
             <NavLink to="/blogs" className="text-white font-semibold hover:underline">Blog</NavLink>

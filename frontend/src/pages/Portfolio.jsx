@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { FadeUp, FadeRight } from '../utility/Animation';
 
-// Sample project data
 const projects = [
   {
     title: 'Africare',
@@ -28,7 +25,7 @@ const Portfolio = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        setIsVisible(entry.isIntersecting); // Set visibility based on whether the entry is intersecting
       },
       { threshold: 0.1 }
     );
@@ -47,29 +44,19 @@ const Portfolio = () => {
   return (
     <>
       <div
-        className={`relative h-[70vh] bg-gray-900 text-white opacity-95 flex flex-col justify-between transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+        className={`relative h-[70vh] bg-gray-900 text-white flex flex-col justify-between transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         style={{
-          backgroundImage: 'url("https://media.istockphoto.com/id/1702810427/photo/wave-of-musical-sounds-abstract-background-with-interweaving-of-dots-and-lines-3d-rendering.jpg?s=612x612&w=0&k=20&c=GL6r9Cb-UL_5YYUHVev8KMEZR3pEVMCrwYtaPNznTNo=")',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1593642532976-1b09b0d1e7b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDU3MTZ8MHwxfGFsbHwxfHx8fHx8fHwxNjg2Mjg3NDE2&ixlib=rb-1.2.1&q=80&w=1080)', // Replace with your background image URL
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
         }}
       >
-        <nav className="w-full flex items-center justify-between mx-12 mt-12 p-6 ">
-          <motion.div
-            variants={FadeUp(0.5)}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-2xl font-bold"
-          >
-            // Marps-Africa
-          </motion.div>
+        <nav className="w-full flex items-center justify-between p-6">
+          <div className="text-2xl font-bold">// Marps-Africa</div>
         </nav>
 
         {/* Social Links */}
-        <div className="absolute left-6 bottom-10 flex flex-col mx-12 space-y-4">
+        <div className="absolute left-6 bottom-10 flex flex-col space-y-4">
           <a href="#" className="hover:opacity-75">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="w-6 h-6">
               <path fill="#0076b2" d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3z"/>
@@ -84,66 +71,52 @@ const Portfolio = () => {
         </div>
 
         {/* Banner Content */}
-        <div className="flex flex-col items-center justify-center text-center mx-auto my-auto px-4">
-          <motion.h1 
-            variants={FadeUp(0.5)}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl lg:text-8xl font-bold"
-          >
-            Marps-Africa Portfolio
-          </motion.h1>
-          <motion.p 
-            variants={FadeUp(0.6)}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          
-          className="mt-4 text-base md:text-lg lg:text-2xl">Here's what we have done.</motion.p>
+        <div className="flex flex-col items-center text-center mt-auto mb-32">
+          <h1 className="text-6xl md:text-8xl font-bold">Marps-Africa Portfolio</h1>
+          <p className="mt-4 text-lg md:text-2xl">Here's what we have done.</p>
         </div>
       </div>
 
       <section ref={projectsRef} className="bg-gray-800 text-white py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-bold text-center opacity-20 shadow mb-12">Portfolio</h2>
+          <h2 className="text-15xl md:text-6xl font-bold text-center opacity-20 shadow mb-12">Portfolio</h2>
           <hr className='mb-10 opacity-20' />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <FadeRight delay={0.2 * index} key={index}>
-                <div className="relative group overflow-hidden border-2 border-gray-700 rounded-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[5/6] lg:aspect-[2/3] xl:aspect-[3/4]"
-                  />
+              <div
+                key={index}
+                className="relative group overflow-hidden border-2 border-gray-700 rounded-lg"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[5/6] lg:aspect-[2/3] xl:aspect-[3/4]"
+                />
 
-                  <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-gray-300">{project.category}</p>
-                    </div>
-
-                    <div className="flex justify-between items-center mt-4">
-                      <a
-                        href="#"
-                        className="relative inline-flex items-center px-8 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full group-hover:text-gray-800 group-hover:bg-white transition-all duration-300"
-                      >
-                        <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-                        <span className="relative text-sm">Explore</span>
-                        <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                          </svg>
-                        </span>
-                      </a>
-                    </div>
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-300">{project.category}</p>
                   </div>
+
+                  <div className="flex justify-between items-center mt-4">
+                    <a
+                      href="#"
+                      className="relative inline-flex items-center px-8 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full group-hover:text-gray-800 group-hover:bg-white transition-all duration-300"
+                    >
+                      <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                      <span className="relative text-sm">Explore</span>
+                      <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+
                 </div>
-              </FadeRight>
+              </div>
             ))}
           </div>
         </div>

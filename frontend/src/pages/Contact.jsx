@@ -61,6 +61,7 @@ const Contact = () => {
       });
   };
 
+function Contact() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white my-4 rounded-lg font-['Roboto']">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
