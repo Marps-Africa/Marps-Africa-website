@@ -27,10 +27,10 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus('Sending...');
 
-    const serviceID = 'service_13ygtrs';
-    const templateID = 'template_n21fa3e'; 
-    const confirmationTemplateID = 'template_6n8ui2t'; 
-    const publicKey = 'L2_7PSPdo8vlmJqDm';
+    const serviceID = 'service_nes84lu';
+    const templateID = 'template_dx2mken'; 
+    const confirmationTemplateID = 'template_bdw467d'; 
+    const publicKey = 'G47v0xkyrNEc7T0Su';
 
     const templateParams = {
       from_name: formData.name,
@@ -61,9 +61,8 @@ const Contact = () => {
       });
   };
 
-// function Contact() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white my-4 rounded-lg font-['Roboto']">
+    <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg font-['Roboto']">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="p-6 space-y-6">
           <h2 className="text-xl md:text-2xl font-bold text-blue-700 font-['Poppins']">
