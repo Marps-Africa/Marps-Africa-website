@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaLaptopCode, FaMobileAlt, FaPalette } from "react-icons/fa";
+import marpslogo from "../assets/marpslogo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,8 +18,8 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <img
-                className="h-8 w-auto"
-                src="/images/5g-iot.jpeg"
+                className="h-28 w-auto"
+                src={marpslogo}
                 alt="Logo"
               />
             </div>
