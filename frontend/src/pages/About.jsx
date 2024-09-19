@@ -134,7 +134,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Our Expertise Section */}
+    
         <div className="lg:w-1/2 bg-blue-200 py-10 md:py-16 px-4 md:px-10 lg:px-20">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 relative inline-block">
             <span className="relative inline-block">
