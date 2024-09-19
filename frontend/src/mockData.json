@@ -32,7 +32,14 @@
     "date": "June 10, 2024",
     "image": "/images/ai-customer-service.jpeg",
     "content": "<p>Artificial Intelligence is transforming customer service in the tech industry. From chatbots to predictive analytics, AI is helping companies provide faster, more personalized support to their customers...</p>",
-    "comments": []
+    "comments": [
+      {
+        "id": 1726754657071,
+        "name": "spookie",
+        "content": "well informed",
+        "date": "2024-09-19T14:04:17.154Z"
+      }
+    ]
   },
   {
     "id": 3,
