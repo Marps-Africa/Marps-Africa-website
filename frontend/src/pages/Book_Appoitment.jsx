@@ -14,26 +14,6 @@ const countryCodes = [
   { code: '+34', name: 'Spain' },
   { code: '+27', name: 'South Africa' },
   { code: '+81', name: 'Japan' },
-  { code: '+86', name: 'China' },
-  { code: '+55', name: 'Brazil' },
-  { code: '+7', name: 'Russia' },
-  { code: '+52', name: 'Mexico' },
-  { code: '+60', name: 'Malaysia' },
-  { code: '+65', name: 'Singapore' },
-  { code: '+82', name: 'South Korea' },
-  { code: '+971', name: 'United Arab Emirates' },
-  { code: '+98', name: 'Iran' },
-  { code: '+20', name: 'Egypt' },
-  { code: '+46', name: 'Sweden' },
-  { code: '+47', name: 'Norway' },
-  { code: '+32', name: 'Belgium' },
-  { code: '+48', name: 'Poland' },
-  { code: '+31', name: 'Netherlands' },
-  { code: '+41', name: 'Switzerland' },
-  { code: '+42', name: 'Czech Republic' },
-  { code: '+371', name: 'Latvia' },
-  { code: '+370', name: 'Lithuania' },
-  { code: '+372', name: 'Estonia' },
   { code: '+254', name: 'Kenya' },
   // Add more country codes as needed
 ];
@@ -43,7 +23,7 @@ const BookAppointment = () => {
     name: '',
     email: '',
     phone: '',
-    countryCode: '+1', 
+    countryCode: '+1',
     appointmentDate: '',
     appointmentTime: '',
     message: '',
@@ -67,6 +47,23 @@ const BookAppointment = () => {
     });
   };
 
+  const validateMessage = (message) => {
+    // Remove minimum character validation
+    // Check if there are more than 10 digits
+    const digitCount = (message.match(/\d/g) || []).length;
+    if (digitCount > 10) {
+      return 'Message cannot contain more than 10 numeric characters.';
+    }
+
+    // Check for repeated sequences of characters or numbers (more than 2)
+    const repeatedPattern = /(.)\1{2,}/;
+    if (repeatedPattern.test(message)) {
+      return 'Message cannot contain sequences of more than 2 repeated characters or numbers.';
+    }
+
+    return null;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -86,32 +83,20 @@ const BookAppointment = () => {
       return;
     }
 
-    if (!formData.message.trim()) {
-      toast.error('Message cannot be empty.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (formData.message.length < 10) {
-      toast.error('Message must be at least 10 characters long.');
-      setIsSubmitting(false);
-      return;
-    }
-
-  
-    const repeatedCharsPattern = /(.)\1{5,}/; 
-    if (repeatedCharsPattern.test(formData.message)) {
-      toast.error('Kindly type a valid message.');
+    // Validate message content
+    const messageError = validateMessage(formData.message.trim());
+    if (messageError) {
+      toast.error(messageError);
       setIsSubmitting(false);
       return;
     }
 
     setIsSubmitting(true);
 
-    const serviceID = 'service_nes84lu'; 
+    const serviceID = 'service_nes84lu';
     const templateID = 'template_dx2mken';
-    const publicKey = 'G47v0xkyrNEc7T0Su'; 
-    
+    const publicKey = 'G47v0xkyrNEc7T0Su';
+
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
@@ -149,10 +134,10 @@ const BookAppointment = () => {
         Book an Appointment with MarpsAfrica
       </h2>
       <p className="text-gray-600 mb-8 text-center md:text-left">
-        Please fill out the form below to schedule an appointment. Fields marked with 
-        <span className="text-red-500"> *</span> are required.
+        Welcome to MarpsAfrica! We're excited to assist you. Please fill out the form below to schedule your appointment. Fields marked with 
+        <span className="text-red-500"> *</span> are required, but we aim to keep it quick and easy for you.
       </p>
-      
+
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -190,13 +175,14 @@ const BookAppointment = () => {
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Phone Number <span className="text-red-500">*</span>
           </label>
-          <div className="flex flex-col md:flex-row md:space-x-2">
+          <div className="flex flex-col sm:flex-row sm:space-x-2">
             <select
               name="countryCode"
               value={formData.countryCode}
               onChange={handleCountryCodeChange}
               disabled={isSubmitting}
-              className="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
+              className="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg sm:w-1/3"
+              style={{ minWidth: '120px' }}
             >
               {countryCodes.map((code) => (
                 <option key={code.code} value={code.code}>
@@ -211,7 +197,7 @@ const BookAppointment = () => {
               onChange={handleChange}
               required
               disabled={isSubmitting}
-              className="w-full mt-2 md:mt-0 p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
+              className="w-full mt-2 sm:mt-0 p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
               placeholder="Enter your phone number"
             />
           </div>
@@ -251,11 +237,24 @@ const BookAppointment = () => {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Upload Document (Optional)
+            Message <span className="text-red-500">*</span>
           </label>
-          <p className="text-xs text-gray-500 mb-2">
-            You can upload any relevant document (e.g., project brief, proposal) if applicable.
-          </p>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            disabled={isSubmitting}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
+            placeholder="Please share any relevant details about your appointment (250-500 characters)"
+            rows="5"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Attach Document (Optional)
+          </label>
           <input
             type="file"
             name="document"
@@ -266,27 +265,14 @@ const BookAppointment = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Message <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
+          <button
+            type="submit"
             disabled={isSubmitting}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
-            placeholder="Leave a message"
-          />
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out"
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Appointment Request'}
+          </button>
         </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg font-sans transition-transform duration-300 transform hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
-        >
-          {isSubmitting ? 'Booking...' : 'Book Appointment'}
-        </button>
       </form>
 
       <ToastContainer />
