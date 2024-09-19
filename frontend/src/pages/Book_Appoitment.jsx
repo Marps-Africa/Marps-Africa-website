@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { storage } from '../firebaseConfig'; // Make sure this path is correct
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const countryCodes = [
   { code: '+1', name: 'United States' },
@@ -48,14 +50,11 @@ const BookAppointment = () => {
   };
 
   const validateMessage = (message) => {
-    // Remove minimum character validation
-    // Check if there are more than 10 digits
     const digitCount = (message.match(/\d/g) || []).length;
     if (digitCount > 10) {
       return 'Message cannot contain more than 10 numeric characters.';
     }
 
-    // Check for repeated sequences of characters or numbers (more than 2)
     const repeatedPattern = /(.)\1{2,}/;
     if (repeatedPattern.test(message)) {
       return 'Message cannot contain sequences of more than 2 repeated characters or numbers.';
@@ -64,7 +63,14 @@ const BookAppointment = () => {
     return null;
   };
 
-  const handleSubmit = (e) => {
+  const uploadDocument = async (file) => {
+    const fileRef = ref(storage, `documents/${file.name}`);
+    await uploadBytes(fileRef, file);
+    const url = await getDownloadURL(fileRef);
+    return url;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const currentDate = new Date();
@@ -83,7 +89,6 @@ const BookAppointment = () => {
       return;
     }
 
-    // Validate message content
     const messageError = validateMessage(formData.message.trim());
     if (messageError) {
       toast.error(messageError);
@@ -93,9 +98,21 @@ const BookAppointment = () => {
 
     setIsSubmitting(true);
 
-    const serviceID = 'service_nes84lu';
-    const templateID = 'template_dx2mken';
-    const publicKey = 'G47v0xkyrNEc7T0Su';
+    let documentUrl = '';
+    if (formData.document) {
+      try {
+        documentUrl = await uploadDocument(formData.document);
+      } catch (error) {
+        console.error('Error uploading document:', error);
+        toast.error('Failed to upload document. Please try again.');
+        setIsSubmitting(false);
+        return;
+      }
+    }
+
+    const serviceID = 'service_13ygtrs';
+    const templateID = 'template_n21fa3e';
+    const publicKey = 'L2_7PSPdo8vlmJqDm';
 
     const templateParams = {
       from_name: formData.name,
@@ -104,6 +121,7 @@ const BookAppointment = () => {
       appointment_date: formData.appointmentDate,
       appointment_time: formData.appointmentTime,
       message: formData.message,
+      document_url: documentUrl, // documentUrl will be an empty string if no document is uploaded
     };
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
@@ -203,36 +221,34 @@ const BookAppointment = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Appointment Date <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="date"
-              name="appointmentDate"
-              value={formData.appointmentDate}
-              onChange={handleChange}
-              required
-              disabled={isSubmitting}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
-            />
-          </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Appointment Date <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="date"
+            name="appointmentDate"
+            value={formData.appointmentDate}
+            onChange={handleChange}
+            required
+            disabled={isSubmitting}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
+          />
+        </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Appointment Time <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="time"
-              name="appointmentTime"
-              value={formData.appointmentTime}
-              onChange={handleChange}
-              required
-              disabled={isSubmitting}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
-            />
-          </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Appointment Time <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="time"
+            name="appointmentTime"
+            value={formData.appointmentTime}
+            onChange={handleChange}
+            required
+            disabled={isSubmitting}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
+          />
         </div>
 
         <div>
@@ -246,33 +262,32 @@ const BookAppointment = () => {
             required
             disabled={isSubmitting}
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
-            placeholder="Please share any relevant details about your appointment (250-500 characters)"
-            rows="5"
+            rows="4"
+            placeholder="Enter your message"
           />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Attach Document (Optional)
+            Upload Document (PDF only) (Optional)
           </label>
           <input
             type="file"
             name="document"
+            accept=".pdf"
             onChange={handleChange}
             disabled={isSubmitting}
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-300 ease-in-out hover:border-blue-400 hover:shadow-lg"
           />
         </div>
 
-        <div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out"
-          >
-            {isSubmitting ? 'Submitting...' : 'Submit Appointment Request'}
-          </button>
-        </div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold transition duration-300 ease-in-out hover:bg-blue-500 disabled:bg-blue-400"
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit Appointment'}
+        </button>
       </form>
 
       <ToastContainer />
