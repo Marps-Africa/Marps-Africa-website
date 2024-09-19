@@ -22,7 +22,7 @@ const Navbar = () => {
             <div className="flex-shrink-0">
               <img
                 className="h-28 w-auto"
-                src={marpslogo}
+                src="{marpslogo}"
                 alt="Logo"
               />
             </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <NavLink
               to="/appoitment"
-              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               Book Appointment
             </NavLink>
