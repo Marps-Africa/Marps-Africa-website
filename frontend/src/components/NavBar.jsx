@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaIndustry, FaChevronDown } from 'react-icons/fa';
-
+import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 right-0 w-full h-[10vh] bg-white border-b border-gray-200 z-50">
+    <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-200 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -97,10 +96,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Call to Action & Mobile Button */}
+          {/* Call to Action Button */}
           <div className="flex items-center space-x-4">
             <NavLink
-              to="/appointment"
+              to="/appoitment"
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               Book Appointment
@@ -149,18 +148,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Services Dropdown (Full Width) */}
+        {/* Services Dropdown */}
         {isServicesOpen && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
             <h2 className="text-3xl font-bold text-blue-600 mb-6">Our Services</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-blue-600">Software Development</h3>
+                <h3 className="text-xl font-semibold text-blue-600 pb-2">Custom Software Solutions</h3>
                 <ul className="space-y-2">
                   <li>
                     <NavLink
                       to="/services/software-development"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaLaptopCode className="h-6 w-6 mr-3 text-blue-600" />
@@ -173,7 +172,7 @@ const Navbar = () => {
                   <li>
                     <NavLink
                       to="/services/mobile-app-development"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaMobileAlt className="h-6 w-6 mr-3 text-blue-600" />
@@ -186,12 +185,12 @@ const Navbar = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-blue-600">Web Services</h3>
+                <h3 className="text-xl font-semibold text-blue-600 pb-2">Web Services</h3>
                 <ul className="space-y-2">
                   <li>
                     <NavLink
                       to="/services/digital-marketing"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaChartBar className="h-6 w-6 mr-3 text-blue-600" />
@@ -204,7 +203,7 @@ const Navbar = () => {
                   <li>
                     <NavLink
                       to="/services/website-development"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaPalette className="h-6 w-6 mr-3 text-blue-600" />
@@ -217,25 +216,25 @@ const Navbar = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-blue-600">Special Services</h3>
+                <h3 className="text-xl font-semibold text-blue-600 pb-2">Special Services</h3>
                 <ul className="space-y-2">
                   <li>
                     <NavLink
                       to="/services/bulk-sms"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaSms className="h-6 w-6 mr-3 text-blue-600" />
                       <div>
                         <h3 className="font-medium hover:underline">Bulk SMS</h3>
-                        <p className="text-sm text-gray-600">Quick and easy integration Bulk SMS service.</p>
+                        <p className="text-sm text-gray-600">Quick and easy integration Bulk SMS service tailored to your business needs.</p>
                       </div>
                     </NavLink>
                   </li>
                   <li>
                     <NavLink
                       to="/services/payment-intergration"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaMoneyBillWave className="h-6 w-6 mr-3 text-blue-600" />
@@ -248,7 +247,7 @@ const Navbar = () => {
                   <li>
                     <NavLink
                       to="/services/market-research"
-                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      className="flex items-start p-3 bg-gray-100 hover:bg-gray-200 rounded-lg"
                       onClick={() => setServicesOpen(false)}
                     >
                       <FaLightbulb className="h-6 w-6 mr-3 text-blue-600" />
