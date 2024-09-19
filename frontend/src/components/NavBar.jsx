@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  FaLaptopCode,
-  FaMobileAlt,
-  FaPalette,
-} from "react-icons/fa";
+import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaIndustry, FaChevronDown } from 'react-icons/fa';
+
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setServicesOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleServices = () => {
+    setServicesOpen(!isServicesOpen);
   };
 
   return (
@@ -42,37 +44,13 @@ const Navbar = () => {
 
               {/* Services Dropdown */}
               <div className="relative group">
-                <NavLink
-                  to="/services"
-                  className="text-gray-700 hover:text-black font-medium"
+                <button
+                  onClick={toggleServices}
+                  className="flex items-center text-gray-700 hover:text-black font-medium focus:outline-none"
                 >
                   Services
-                </NavLink>
-                <div className="absolute hidden group-hover:block bg-white border shadow-lg mt-2 py-2 w-[450px]">
-                  <ul className="grid grid-cols-1 gap-4 p-4">
-                    <li className="flex items-start p-2 bg-green-100 hover:bg-green-200">
-                      <FaLaptopCode className="h-6 w-6 mr-2 text-green-700" />
-                      <div>
-                        <h3 className="font-bold text-black">Software Development</h3>
-                        <p className="text-gray-500 text-sm">Plan, design, and develop robust software.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-2 bg-green-100 hover:bg-green-200">
-                      <FaMobileAlt className="h-6 w-6 mr-2 text-green-700" />
-                      <div>
-                        <h3 className="font-bold text-black">Mobile App Development</h3>
-                        <p className="text-gray-500 text-sm">Cross-platform mobile applications.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-2 bg-green-300 hover:bg-green-400">
-                      <FaPalette className="h-6 w-6 mr-2 text-green-700" />
-                      <div>
-                        <h3 className="font-bold text-black">Website Design</h3>
-                        <p className="text-gray-500 text-sm">Aesthetic web design solutions.</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  <FaChevronDown className={`ml-1 transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
               </div>
 
               {/* Other links */}
@@ -106,7 +84,6 @@ const Navbar = () => {
               >
                 Our Blogs
               </NavLink>
-
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
@@ -123,7 +100,7 @@ const Navbar = () => {
           {/* Call to Action & Mobile Button */}
           <div className="flex items-center space-x-4">
             <NavLink
-              to="/appoitment"
+              to="/appointment"
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               Book Appointment
@@ -172,51 +149,191 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Services Dropdown (Full Width) */}
+        {isServicesOpen && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h2 className="text-3xl font-bold text-blue-600 mb-6">Our Services</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-blue-600">Software Development</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <NavLink
+                      to="/services/software-development"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaLaptopCode className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Software Development</h3>
+                        <p className="text-sm text-gray-600">Plan, design, and develop robust software solutions.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/mobile-app-development"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaMobileAlt className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Mobile App Development</h3>
+                        <p className="text-sm text-gray-600">Create cross-platform mobile applications.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-blue-600">Web Services</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <NavLink
+                      to="/services/digital-marketing"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaChartBar className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Digital Marketing</h3>
+                        <p className="text-sm text-gray-600">Comprehensive digital marketing strategies and execution.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/website-development"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaPalette className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Website Design</h3>
+                        <p className="text-sm text-gray-600">Aesthetically pleasing and functional website designs.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-blue-600">Special Services</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <NavLink
+                      to="/services/bulk-sms"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaSms className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Bulk SMS</h3>
+                        <p className="text-sm text-gray-600">Quick and easy integration Bulk SMS service.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/payment-intergration"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaMoneyBillWave className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Payment Integration</h3>
+                        <p className="text-sm text-gray-600">Secure payment integrations for multiple modes of payment.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services/market-research"
+                      className="flex items-start p-3 bg-white hover:bg-gray-200 rounded-lg"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      <FaLightbulb className="h-6 w-6 mr-3 text-blue-600" />
+                      <div>
+                        <h3 className="font-medium hover:underline">Research & Innovation</h3>
+                        <p className="text-sm text-gray-600">Cutting-edge research and innovative solutions for your business.</p>
+                      </div>
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="flex flex-col space-y-4 mt-4 bg-white border-t border-gray-200 py-4">
               <NavLink
                 to="/"
-                className="text-gray-700 hover:text-black font-medium"
+                className="text-gray-700 hover:text-black font-medium px-4"
                 onClick={toggleMobileMenu}
               >
                 Home
               </NavLink>
-              <NavLink
-                to="/services"
-                className="text-gray-700 hover:text-black font-medium"
-                onClick={toggleMobileMenu}
+              <button
+                onClick={() => setServicesOpen(!isServicesOpen)}
+                className="text-left text-gray-700 hover:text-black font-medium flex items-center justify-between px-4"
               >
                 Services
-              </NavLink>
+                <FaChevronDown className={`ml-2 transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isServicesOpen && (
+                <div className="pl-8 space-y-2">
+                  <NavLink
+                    to="/services/software-development"
+                    className="block text-gray-600 hover:text-black py-2"
+                    onClick={toggleMobileMenu}
+                  >
+                    Software Development
+                  </NavLink>
+                  <NavLink
+                    to="/services/mobile-app-development"
+                    className="block text-gray-600 hover:text-black py-2"
+                    onClick={toggleMobileMenu}
+                  >
+                    Mobile App Development
+                  </NavLink>
+                  <NavLink
+                    to="/services/website-design"
+                    className="block text-gray-600 hover:text-black py-2"
+                    onClick={toggleMobileMenu}
+                  >
+                    Website Design
+                  </NavLink>
+                </div>
+              )}
               <NavLink
-                to="/resources"
-                className="text-gray-700 hover:text-black font-medium"
+                to="/about"
+                className="text-gray-700 hover:text-black font-medium px-4"
                 onClick={toggleMobileMenu}
               >
-                Resources
+                About Us
               </NavLink>
               <NavLink
                 to="/portfolio"
-                className="text-gray-700 hover:text-black font-medium"
+                className="text-gray-700 hover:text-black font-medium px-4"
                 onClick={toggleMobileMenu}
               >
                 Portfolio
               </NavLink>
               <NavLink
-                to="/blog"
-                className="text-gray-700 hover:text-black font-medium"
+                to="/blogs"
+                className="text-gray-700 hover:text-black font-medium px-4"
                 onClick={toggleMobileMenu}
               >
-                Blog
+                Our Blogs
               </NavLink>
               <NavLink
                 to="/contact"
-                className="text-gray-700 hover:text-black font-medium"
+                className="text-gray-700 hover:text-black font-medium px-4"
                 onClick={toggleMobileMenu}
               >
-                Contact
+                Contact Us
               </NavLink>
             </div>
           </div>
