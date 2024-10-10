@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home7/marpscok/public_html  # Path to the public_html folder on the server
+    - /bin/cp index.html $DEPLOYPATH                 # Copy index.html file to the public_html folder
+    - /bin/cp -r dist/* $DEPLOYPATH                  # Copy all files from the dist folder to public_html
+    - /bin/cp -r public/* $DEPLOYPATH                # Copy all files from the public folder to public_html

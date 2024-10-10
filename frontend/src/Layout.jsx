@@ -10,7 +10,7 @@ function Layout() {
       <header>
         <Navbar />
       </header>
-      <main className="flex-grow min-h-[90vh] bg-[#F4F4F6]">
+      <main className="flex-grow min-h-[90vh] bg-[#F4F4F6] mt-16">
         <Outlet />
       </main>
       <footer>

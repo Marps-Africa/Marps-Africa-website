@@ -1,0 +1,6 @@
+.text-stroke {
+    -webkit-text-stroke: 1px black;
+    color: white; 
+    text-shadow: 0 0 1px black; 
+  }
+  
