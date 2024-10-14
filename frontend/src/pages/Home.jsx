@@ -82,7 +82,7 @@ function Home() {
             <p className="text-lg text-white">
               {images[currentIndex].subheading}
             </p>
-            <button className="mt-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+            <button className="mt-4 bg-[#37B6FF] text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-500 transition duration-300">
               {images[currentIndex].buttonText}
             </button>
           </div>
@@ -105,7 +105,7 @@ function Home() {
       <section className="bg-gray-100 py-16 md:w-[80vw] mx-auto">
         <div className="container mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <h3 className="text-xl text-blue-600 font-semibold mb-2">
+            <h3 className="text-xl text-[#37B6FF] font-semibold mb-2">
               What We're Offering
             </h3>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
@@ -194,7 +194,7 @@ function Home() {
                 <h2 className='text-white text-3xl md:text-4xl font-bold mb-3'>
                   Let's Build Your Website!
                 </h2>
-                <Link to='/contact' className='inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+                <Link to='/contact' className='inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#37B6FF] rounded-md shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                   Contact Us
                 </Link>
               </div>

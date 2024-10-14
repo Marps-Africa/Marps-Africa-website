@@ -212,7 +212,7 @@ const BookAppointment = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">
+      <h2 className="text-3xl font-bold text-[#37B6FF] mb-6 text-center">
         Book an Appointment
       </h2>
 
@@ -381,14 +381,14 @@ const BookAppointment = () => {
             accept=".pdf"
             onChange={handleChange}
             disabled={isSubmitting}
-            className="w-full border border-gray-300 rounded-lg shadow-sm file:border-0 file:bg-blue-500 file:text-white file:py-2 file:px-4 file:rounded-lg file:text-sm transition duration-150 ease-in-out"
+            className="w-full border border-gray-300 rounded-lg shadow-sm file:border-0 file:bg-[#37B6FF] file:text-white file:py-2 file:px-4 file:rounded-lg file:text-sm transition duration-150 ease-in-out"
           />
         </div>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full bg-blue-600 text-white py-2 px-4 rounded-lg shadow-sm hover:bg-blue-700 transition duration-150 ease-in-out ${
+          className={`w-full bg-[#37B6FF] text-white py-2 px-4 rounded-lg shadow-sm hover:bg-blue-700 transition duration-150 ease-in-out ${
             isSubmitting ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >

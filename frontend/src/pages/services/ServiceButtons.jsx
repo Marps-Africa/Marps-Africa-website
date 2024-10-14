@@ -14,7 +14,7 @@ export default function ServiceButtons() {
       {/* Menu button for small/medium screens */}
       <button 
         onClick={toggleSidebar} 
-        className="fixed top-20 left-6 z-50 lg:hidden bg-blue-600 text-white p-2 rounded-lg"
+        className="fixed top-20 left-6 z-50 lg:hidden bg-[#37B6FF] text-white p-2 rounded-lg"
       >
         <Menu size={24} />
       </button>
@@ -35,7 +35,7 @@ export default function ServiceButtons() {
         ${sidebarOpen ? 'top-0 left-0 h-full w-64 translate-x-0' : 'top-0 left-0 h-full w-64 -translate-x-full'}
         lg:translate-x-0 lg:h-auto lg:w-auto
       `}>
-        <h2 className="flex justify-center text-3xl font-bold text-blue-600 mb-6">Our Services</h2>
+        <h2 className="flex justify-center text-3xl font-bold text-[#37B6FF] mb-6">Our Services</h2>
         <div className='grid space-y-2 space-x-2'>
           <div></div>
           <NavLink
@@ -43,7 +43,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -54,7 +54,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -65,7 +65,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -76,7 +76,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -87,7 +87,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -98,7 +98,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >
@@ -109,7 +109,7 @@ export default function ServiceButtons() {
             onClick={closeSidebar}
             className={({ isActive }) =>
               `px-2 hover:bg-gray-300 hover:underline rounded-lg text-gray-700 ${
-                isActive ? 'bg-blue-600 text-white hover:bg-blue-700' : ''
+                isActive ? 'bg-[#37B6FF] text-white hover:bg-blue-700' : ''
               }`
             }
           >

@@ -88,7 +88,7 @@ const TabContent = ({ selectedTab }) => {
         <p className="text-gray-600 text-md mb-4">{description}</p>
         <Link
           to="/services/software-development"
-          className="self-start mt-2 bg-blue-500 text-white px-6 py-3 rounded-full shadow hover:bg-blue-600 transition duration-300"
+          className="self-start mt-2 bg-[#37B6FF] text-white px-6 py-3 rounded-full shadow hover:bg-blue-500 transition duration-300"
         >
           Learn More
         </Link>
@@ -104,7 +104,7 @@ function HomeServices() {
     <section className="bg-[#F3F6FD] ">
       <div className="w-full md:w-[90vw] lg:w-[80vw] mx-auto py-10 px-2">
         <div className="text-center">
-          <h1 className="text-lg uppercase tracking-wider text-blue-400">Our Services</h1>
+          <h1 className="text-lg uppercase tracking-wider text-[#37B6FF]">Our Services</h1>
           <h2 className="text-4xl font-bold mt-4">Detailing of our products</h2>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-4 bg-white p-4 rounded-md shadow-md">

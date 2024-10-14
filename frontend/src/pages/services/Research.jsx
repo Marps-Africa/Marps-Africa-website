@@ -47,7 +47,7 @@ export default function MarketResearch() {
                 {index % 2 !== 0 ? (
                   <>
                     <motion.img
-                      src={`/src/assets/images/research/image${index}.png`}
+                      src={`/images/research/image${index}.png`}
                       alt=""
                       className="rounded-lg w-full md:w-1/2 object-cover"
                       whileHover={{ scale: 1.05 }}
@@ -174,7 +174,7 @@ export default function MarketResearch() {
                       )}
                     </div>
                     <motion.img
-                      src={`/src/assets/images/research/image${index}.png`}
+                      src={`/images/research/image${index}.png`}
                       alt=""
                       className="rounded-lg w-full md:w-1/2 object-cover order-1 md:order-2"
                       whileHover={{ scale: 1.05 }}
@@ -227,7 +227,7 @@ export default function MarketResearch() {
           <div className="flex justify-end mt-8">
             <NavLink
               to="/appoitment"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-800"
+              className="bg-[#37B6FF] text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               Book Appointment
             </NavLink>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import marpsxlogo2 from "../assets/marpsxlogo2.png";
-import marpslogo1 from "../assets/marpslogo1.png";
 
 import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaChevronDown } from 'react-icons/fa';
 
@@ -46,8 +45,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              {/* <img className="h-36 w-auto" src={marpslogo1} alt="Logo" /> */}
-              <img className="h-28 w-auto" src={marpsxlogo2} alt="Logo" />
+              <img className="h-14 w-auto" src={marpsxlogo2} alt="Logo" />
             </div>
 
             {/* Desktop Menu */}
@@ -79,12 +77,12 @@ const Navbar = () => {
                 {isServicesOpen && (
                   <div className="fixed left-0 right-0 bg-white shadow-lg z-20 mt-2">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <h2 className="text-3xl font-bold text-blue-600 mb-6">
+                      <h2 className="text-3xl font-bold text-[#37B6FF] mb-6">
                         Our Services
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2">
-                          <h3 className="text-xl font-semibold text-blue-600 pb-2">
+                          <h3 className="text-xl font-semibold text-[#37B6FF] pb-2">
                             Custom Software Solutions
                           </h3>
                           <NavLink
@@ -97,7 +95,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaLaptopCode className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaLaptopCode className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -119,7 +117,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaMobileAlt className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaMobileAlt className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -132,7 +130,7 @@ const Navbar = () => {
                           </NavLink>
                         </div>
                         <div className="space-y-2">
-                          <h3 className="text-xl font-semibold text-blue-600 pb-2">
+                          <h3 className="text-xl font-semibold text-[#37B6FF] pb-2">
                             Web Services
                           </h3>
                           <NavLink
@@ -145,7 +143,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaChartBar className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaChartBar className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -164,7 +162,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaPalette className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaPalette className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -178,7 +176,7 @@ const Navbar = () => {
                           </NavLink>
                         </div>
                         <div className="space-y-2">
-                          <h3 className="text-xl font-semibold text-blue-600 pb-2">
+                          <h3 className="text-xl font-semibold text-[#37B6FF] pb-2">
                             Special Services
                           </h3>
                           <NavLink
@@ -188,7 +186,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaSms className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaSms className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -210,7 +208,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaMoneyBillWave className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaMoneyBillWave className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -229,7 +227,7 @@ const Navbar = () => {
                             }
                           >
                             <div className="">
-                              <FaLightbulb className="h-6 w-6 mr-3 text-blue-600 mt-1" />
+                              <FaLightbulb className="h-6 w-6 mr-3 text-[#37B6FF] mt-1" />
                             </div>
                             <div>
                               <h3 className="font-medium hover:underline">
@@ -296,7 +294,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <NavLink
               to="/appoitment"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-800 sm:ml-4"
+              className="bg-[#37B6FF] text-white px-2 py-1 rounded hover:bg-blue-500 sm:ml-4"
             >
               Book Appointment
             </NavLink>

@@ -15,12 +15,11 @@ export default function About() {
         <div className="relative z-10 flex flex-col items-start justify-center h-full text-white text-left p-6 md:p-10 lg:p-20">
           <div className="font-sans">
             <p className="text-xs md:text-sm font-thin tracking-wider">
-              <a href="/" className="hover:text-gray-300 transition-colors duration-300">Home</a> &gt; 
-              <a href="/about" className="hover:text-gray-300 transition-colors duration-300">About Us</a>
+              <a href="/" className="hover:text-[#37B6FF] transition-colors duration-300">Home</a>
             </p>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight font-serif relative pb-2">
               About Us
-              <span className="absolute left-0 bottom-0 w-1/4 border-t-4 border-white"></span>
+              <span className="absolute left-0 bottom-0 w-1/4 border-t-4 border-[#37B6FF]"></span>
             </h1>
           </div>
         </div>
@@ -29,13 +28,13 @@ export default function About() {
       {/* Company Description Section */}
       <div className="bg-gray-200 py-6 md:py-10 px-4 md:px-10 lg:px-20">
         <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed text-center mb-6 md:mb-8 font-thin">
-          MarpsAfrica Solutions is an innovative IT service provider company engaging its customer with hosted online applications and content. 
+          MarpsAfrica Solutions is an innovative IT service provider engaging its customer with hosted online applications and content. 
           We recognize the organic nature of IT systems and the increase in the rate of change enabled by the Mobile, Internet, and globalization. 
           We are a leading provider of CSP technology while offering customer-oriented and unique services that enable their competitive advantage.
         </p>
         <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed text-center font-thin">
           We build long-term relationships with customers in specific vertical industry segments offering a full complement of competitive, 
-          integrated, packaged offerings to which customers can benefit from the mobile channel by delivering services aimed at generating revenues, 
+          integrated package which customers can benefit from the mobile channel by delivering services aimed at generating revenue, 
           improving business efficiency, and proactively managing relationships with customers through personalized interaction.
         </p>
       </div>
@@ -46,7 +45,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-left">
             <span className="relative inline-block">
               Why Choose Us
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-yellow-400"></span>
+              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
             </span>
           </h2>
         </div>
@@ -78,12 +77,12 @@ export default function About() {
             description: 'Engage with consumers and inspire the media – we ensure brands are seen and heard in all the right places.'
           }].map((item, index) => (
             <div key={index} className="flex flex-col md:flex-row items-start">
-              <div className="bg-yellow-400 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+              <div className="bg-[#37B6FF] rounded-full w-12 h-12 flex items-center justify-center mr-4">
                 {item.icon}
               </div>
               <div>
                 <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-1 relative">
-                  <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-yellow-400"></span>
+                  <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
                   {item.title}
                 </h3>
                 <p className="text-xs md:text-sm lg:text-base font-thin tracking-wider text-gray-600">
@@ -101,7 +100,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 relative inline-block">
             <span className="relative inline-block">
               Opportunity and Strategy
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-yellow-400"></span>
+              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
             </span>
           </h2>
           <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed mb-4">
@@ -139,7 +138,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 relative inline-block">
             <span className="relative inline-block">
               Our Expertise
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-yellow-400"></span>
+              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
             </span>
           </h2>
           <div className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
@@ -162,7 +161,7 @@ export default function About() {
             }].map((item, index) => (
               <div key={index} className="flex flex-col mb-6">
                 <div className="flex items-center mb-2">
-                  <div className="flex items-center justify-center w-12 h-12 bg-yellow-400 rounded-full">
+                  <div className="flex items-center justify-center w-12 h-12 bg-[#37B6FF] rounded-full">
                     {item.icon}
                   </div>
                   <div className="ml-4">
@@ -176,7 +175,7 @@ export default function About() {
                     <span>100%</span>
                   </div>
                   <div className="relative flex items-center w-full bg-gray-400 h-2 rounded">
-                    <div className="absolute top-0 left-0 h-2 bg-yellow-400 rounded" style={{ width: item.percentage }}></div>
+                    <div className="absolute top-0 left-0 h-2 bg-[#37B6FF] rounded" style={{ width: item.percentage }}></div>
                   </div>
                 </div>
               </div>

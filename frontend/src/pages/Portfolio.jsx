@@ -36,7 +36,7 @@ const Portfolio = () => {
           Projects we've made trying to put <br /> our dent in the universe.
         </h1>
         <span className='text-base sm:text-lg md:text-xl'>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, eveniet!</p>
+          <p>Explore some of our past and recent successful projects.</p>
         </span>
         <br className='mb-4'/>
         
@@ -55,7 +55,7 @@ const Portfolio = () => {
     <a
       key={index}
       href="#"
-      className="relative block overflow-hidden rounded-lg border border-gray-300 p-4 sm:p-6 lg:p-8 transition-transform duration-300 hover:scale-105 hover:border-blue-400 hover:border-2 hover:shadow-lg"
+      className="relative block overflow-hidden rounded-lg border border-gray-300 p-4 sm:p-6 lg:p-8 transition-transform duration-300 hover:scale-105 hover:border-[#37B6FF] hover:border-2 hover:shadow-lg"
     >
       <img
         alt=""
@@ -76,7 +76,7 @@ const Portfolio = () => {
       <dl className="mt-6 flex gap-4 sm:gap-6">
       <div className="flex flex-col-reverse">
       <a href="https://www.google.com" 
-        className='border-2 border-blue-500 rounded-lg text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 transition duration-300 ease-in-out'>
+        className='border-2 border-[#37B6FF] rounded-lg text-[#37B6FF] hover:bg-blue-500 hover:text-white px-4 py-2 transition duration-300 ease-in-out'>
         Explore
       </a>
 

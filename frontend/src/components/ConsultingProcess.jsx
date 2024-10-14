@@ -6,7 +6,7 @@ const ConsultingProcess = () => {
         <div className="md:w-[80vw] mx-auto flex flex-col lg:flex-row justify-between items-start p-10  bg-white">
             {/* Left Section - Main Content */}
             <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-            <h3 className="text-xl text-blue-600 font-semibold mb-2">Consultation</h3>
+            <h3 className="text-xl text-[#37B6FF] font-semibold mb-2">Consultation</h3>
             <h1 className="text-gray-800 text-4xl font-bold">Best pathway to our clients.</h1>
             <p className="text-gray-600 mt-4 text-lg">
                 Our consulting process begins with a thorough assessment of your current IT infrastructure,
@@ -16,15 +16,15 @@ const ConsultingProcess = () => {
             {/* Service Features */}
             <ul className="mt-8 space-y-3 text-lg">
                 <li className="flex items-center">
-                <span className="text-blue-600 text-xl mr-2">✔</span>
+                <span className="text-[#37B6FF] text-xl mr-2">✔</span>
                 <span className="text-gray-700">24/7 Full Service Support</span>
                 </li>
                 <li className="flex items-center">
-                <span className="text-blue-600 text-xl mr-2">✔</span>
+                <span className="text-[#37B6FF] text-xl mr-2">✔</span>
                 <span className="text-gray-700">Immediate Response</span>
                 </li>
                 <li className="flex items-center">
-                <span className="text-blue-600 text-xl mr-2">✔</span>
+                <span className="text-[#37B6FF] text-xl mr-2">✔</span>
                 <span className="text-gray-700">Easy to Approach us</span>
                 </li>
             </ul>
@@ -37,7 +37,7 @@ const ConsultingProcess = () => {
 
             {/* Step 1 */}
             <div className="flex items-start mb-10 pl-12">
-                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold">
+                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-[#37B6FF] rounded-full text-lg font-bold">
                 01
                 </div>
                 <div className="ml-6 bg-blue-50 p-4 rounded-lg shadow-md w-full">
@@ -50,7 +50,7 @@ const ConsultingProcess = () => {
 
             {/* Step 2 */}
             <div className="flex items-start mb-10 pl-12">
-                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold">
+                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-[#37B6FF] rounded-full text-lg font-bold">
                 02
                 </div>
                 <div className="ml-6 bg-blue-50 p-4 rounded-lg shadow-md w-full">
@@ -63,7 +63,7 @@ const ConsultingProcess = () => {
 
             {/* Step 3 */}
             <div className="flex items-start pl-12">
-                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold">
+                <div className="w-8 h-8 flex items-center justify-center bg-blue-100 text-[#37B6FF] rounded-full text-lg font-bold">
                 03
                 </div>
                 <div className="ml-6 bg-blue-50 p-4 rounded-lg shadow-md w-full">
