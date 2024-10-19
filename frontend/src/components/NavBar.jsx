@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import marpsxlogo2 from "../assets/marpsxlogo2.png";
+import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
 
 import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaChevronDown } from 'react-icons/fa';
 
@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-200 z-50">
+    <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-300 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

@@ -10,6 +10,12 @@ export default {
         sans: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
+      colors:{
+        blues:{
+          100 : "#1351D8",
+          200 : "#163F95"
+        }
+      }
     },
   },
   variants: {},

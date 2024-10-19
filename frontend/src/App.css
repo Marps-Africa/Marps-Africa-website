@@ -4,3 +4,12 @@
     text-shadow: 0 0 1px black; 
   }
   
+  footer {
+    background-color: black;
+    background-image: 
+      linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+      linear-gradient(225deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 75px 75px; /* Adjust to control line spacing */
+    background-repeat: repeat;
+  }
+  

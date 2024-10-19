@@ -3,7 +3,7 @@ import React from 'react';
 const ConsultingProcess = () => {
   return (
     <section className='mx-2 pb-8'>
-        <div className="md:w-[80vw] mx-auto flex flex-col lg:flex-row justify-between items-start p-10  bg-white">
+        <div className="md:w-[80vw] mx-auto flex flex-col lg:flex-row justify-between items-start p-10  bg-white rounded-lg">
             {/* Left Section - Main Content */}
             <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
             <h3 className="text-xl text-[#37B6FF] font-semibold mb-2">Consultation</h3>

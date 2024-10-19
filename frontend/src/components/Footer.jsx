@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import marpsxlogo2 from "../assets/marpsxlogo2.png";
+import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
 
 const Footer = () => {
   return (

@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Loader from "./components/Loader"; // Import the loader component
 
-import Home from "./pages/Home";
 import Blogs from "./pages/blogs/Blogs";
 import BlogPost from "./pages/blogs/BlogPost";
 import Contact from "./pages/Contact";
@@ -18,15 +17,15 @@ import WebDev from "./pages/services/WebDev";
 import BulkSms from "./pages/services/BulkSms";
 import PayIntergration from "./pages/services/PayIntergration";
 import Research from "./pages/services/Research";
+import Home  from "./pages/home/Home";
 
 function App() {
-  const [loading, setLoading] = useState(true); // Track the loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    // Simulate a delay for the loader (e.g., 2 seconds)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the delay as needed
+    }, 1000); // Adjust the delay as needed
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);

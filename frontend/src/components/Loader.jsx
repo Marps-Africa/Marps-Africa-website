@@ -1,5 +1,5 @@
 import React from 'react';
-import marpsxlogo2 from "../assets/marpsxlogo2.jpeg";
+import marpsxlogo2 from "/images/homeimages/marpsxlogo2.jpeg";
 
 const Loader = () => {
   return (
