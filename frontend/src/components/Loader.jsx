@@ -19,7 +19,10 @@ const StyledWrapper = styled.div`
     --uib-size: 50px;
     --uib-speed: 1.2s;
     --uib-color: #474554;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
