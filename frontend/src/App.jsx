@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import Loader from "./components/Loader"; // Import the loader component
+import Loader from "./components/Loader";
 
 import Blogs from "./pages/blogs/Blogs";
 import BlogPost from "./pages/blogs/BlogPost";
+import Navba from "./pages/blogs/Nav";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -52,8 +53,9 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="about" element={<About />} />
           <Route path="appoitment" element={<Book_Appoitment />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
-        <Route path="*" element={<NoPage />} />
+        <Route path="/nav" element={<Navba />} />
       </Routes>
     </BrowserRouter>
   );

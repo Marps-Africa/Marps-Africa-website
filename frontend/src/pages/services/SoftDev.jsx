@@ -36,8 +36,8 @@ export default function SoftDev() {
       <div className="flex-grow p-4 md:p-8 lg:p-12">
         <div className="max-w-4xl mx-auto space-y-8">
           <FadeInWhenVisible>
-            <h2 className="font-semibold text-2xl text-gray-800 py-2 text-center md:text-left lg:text-center">
-              Software Development
+            <h2 className="font-semibold text-2xl text-gray-800 py-2 text-center md:text-left lg:text-center sm:ml-10">
+              Software Development\
             </h2>
           </FadeInWhenVisible>
 

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import marpsxlogo2 from "../assets/marpsxlogo2.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
 
@@ -33,9 +35,19 @@ const Navbar = () => {
   }, []);
 
   const handleServiceClick = (path, e) => {
+    console.log("function called", path);
     e.preventDefault();
+    e.stopPropagation();
     setServicesOpen(false);
+    console.log("path clicked", path);
     navigate(path);
+  };
+
+  const handleNavLinkClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleServiceClick("/services/software-development", e);
+    toggleMobileMenu();
   };
 
   return (
@@ -367,11 +379,9 @@ const Navbar = () => {
               {isServicesOpen && (
                 <div className="pl-8 space-y-2">
                   <NavLink
+                    to="/services/software-development"
                     className="block text-gray-600 hover:text-black py-2"
-                    onClick={(e) => {
-                      handleServiceClick("/services/software-development", e);
-                      toggleMobileMenu();
-                    }}
+                    
                   >
                     Software Development
                   </NavLink>
