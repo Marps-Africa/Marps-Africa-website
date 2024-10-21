@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import marpsxlogo2 from "../assets/marpsxlogo2.png";
-import { NavLink, useNavigate } from "react-router-dom";
+// import marpsxlogo2 from "../assets/marpsxlogo2.png";
 import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
 
 import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb, FaChevronDown } from 'react-icons/fa';
