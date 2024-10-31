@@ -3,52 +3,42 @@ import { NavLink } from "react-router-dom";
 import { FaChevronDown } from 'react-icons/fa';
 import ServicesDropdown from "./ServicesDropdown";
 
-const DesktopMenu = ({ isServicesOpen, toggleServices, handleServiceClick }) => {
+const DesktopMenu = ({ handleServiceClick }) => {
   const dropdownRef = useRef(null);
 
-  // Function to close the dropdown when clicking outside
-  const closeDropdown = () => {
-    if (isServicesOpen) toggleServices(); // Toggle to close
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        closeDropdown();
-      }
-    };
-
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Cleanup the event listener on component unmount
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isServicesOpen]);
-
   return (
-    <div className="flex space-x-8" ref={dropdownRef}>
-      <NavLink to="/" className="text-gray-700 hover:text-black font-medium">
+    <div className="flex items-center space-x-8 bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 rounded-md shadow-lg text-white">
+      <NavLink
+        to="/"
+        className="hover:text-yellow-400 font-semibold transition-all duration-300 hover:underline "
+      >
         Home
       </NavLink>
 
-      {/* Services Dropdown */}
-      <div className="relative" onClick={toggleServices}>
-        <button className="flex items-center text-gray-700 hover:text-black font-medium">
+      {/* Services Dropdown - Hover to display */}
+      <div className="relative group" ref={dropdownRef}>
+        <button className="flex items-center font-semibold transition-all duration-300 hover:text-yellow-400">
           Services
-          <FaChevronDown className={`ml-1 ${isServicesOpen ? "rotate-180" : ""}`} />
+          <FaChevronDown className="ml-1 transform transition-transform duration-300 group-hover:rotate-180" />
         </button>
+        
+        {/* Display dropdown on hover */}
         <ServicesDropdown
-          isOpen={isServicesOpen}
+          isOpen={true} // Always render but show based on hover
           handleServiceClick={handleServiceClick}
-          closeDropdown={closeDropdown} // Pass close function
         />
       </div>
 
-      <NavLink to="/about" className="text-gray-700 hover:text-black font-medium">
+      <NavLink
+        to="/about"
+        className="hover:text-yellow-400 font-semibold transition-all duration-300 hover:underline"
+      >
         About Us
       </NavLink>
-      <NavLink to="/contact" className="text-gray-700 hover:text-black font-medium">
+      <NavLink
+        to="/contact"
+        className="hover:text-yellow-400 font-semibold transition-all duration-300 hover:underline"
+      >
         Contact Us
       </NavLink>
     </div>

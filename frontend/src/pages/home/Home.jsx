@@ -12,20 +12,22 @@ function Home() {
     script.async = true;
     script.charset = 'UTF-8';
     script.setAttribute('crossorigin', '*');
-    
+
     // Append the script to the document
     document.body.appendChild(script);
 
-    // Once the script loads, we can configure Tawk API to hide messages
+    // Configure Tawk API to hide messages
     script.onload = () => {
       if (window.Tawk_API) {
-        // Hide the initial message or greetings
+        // Hide the initial message
         window.Tawk_API.onLoad = function() {
-          window.Tawk_API.hideWidget(); // or use minimize instead of hide
+          window.Tawk_API.hideWidget();
         };
         
-        // To show the widget when a user clicks on it manually, you can use:
-        // window.Tawk_API.showWidget();
+        // Show widget on button click
+        document.getElementById('show-tawk').onclick = function() {
+          window.Tawk_API.showWidget();
+        };
       }
     };
 
@@ -42,6 +44,8 @@ function Home() {
       <ContactUs />
       <HomeServices />
       <ConsultingProcess />
+      {/* Button to open Tawk widget */}
+      
     </div>
   );
 }

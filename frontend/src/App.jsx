@@ -53,6 +53,7 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="about" element={<About />} />
           <Route path="appoitment" element={<Book_Appoitment />} />
+
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="/nav" element={<Navba />} />

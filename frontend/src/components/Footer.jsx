@@ -67,21 +67,7 @@ const Footer = () => {
               <Link to="/contact" className="hover:text-gray-400 cursor-pointer transition duration-300">Contact</Link>
             </ul>
           </div>
-        </div>
-
-        {/* Address Section */}
-        <div className="footer-section text-center sm:text-left space-y-3">
-          <h3 className="text-[#37B6FF] text-lg sm:text-xl font-bold">Resources</h3>
-          <ul className="space-y-2 text-gray-300 text-sm sm:text-base">
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Case Studies</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">News</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Events</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Webinars</li>
-            </ul>
-        </div>
-
-
-        
+        </div>        
       </div>
 
       <hr className="border-gray-600 my-0" />

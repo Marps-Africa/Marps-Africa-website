@@ -10,11 +10,25 @@ export default {
         sans: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
-      colors:{
-        primary:{
+      colors: {
+        primary: {
           100 : "#1351D8",
           200 : "#163F95"
         }
+      },
+      animation: {
+        "slide-in": "slideIn 0.3s ease-out forwards",
+        "fade-in-slide-down": "fadeInSlideDown 0.5s ease-out forwards",
+      },
+      keyframes: {
+        slideIn: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        fadeInSlideDown: {
+          "0%": { opacity: 0, transform: "translateY(-20px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       }
     },
   },
