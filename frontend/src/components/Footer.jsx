@@ -1,11 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-800 text-white">
       {/* Top Section */}
       <div
         className="w-full px-6 py-8 lg:px-12 lg:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -21,12 +21,14 @@ const Footer = () => {
           <p className="text-gray-400 text-sm sm:text-base font-light leading-relaxed">
             Spice up your business with our cutting-edge solutions...
           </p>
-          <div className="flex justify-center sm:justify-start space-x-4 mt-4 text-xl font-bold">
+
+          {/* SOCIAL ACCOUNTS */}
+          {/* <div className="flex justify-center sm:justify-start space-x-4 mt-4 text-xl font-bold">
             <FaFacebookF className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
             <FaTwitter className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
             <FaLinkedinIn className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
             <FaInstagram className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
-          </div>
+          </div> */}
         </div>
 
         {/* Services & Products Section */}
@@ -34,21 +36,35 @@ const Footer = () => {
           <div>
             <h3 className="text-[#37B6FF] text-lg sm:text-xl font-bold">Our Services</h3>
             <ul className="space-y-2 text-gray-300 text-sm sm:text-base">
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Software Development</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Training</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Digital Marketing</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">ICT Consultancy</li>
-              <li className="hover:text-gray-400 cursor-pointer transition duration-300">Mobile App Development</li>
-            </ul>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/software-development">Software Development</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/mobile-app-development">Mobile App Development</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/digital-marketing">Digital Marketing</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/website-design">Website Design</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/bulk-sms">Bulk SMS</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/payment-integration">Payment Integration</Link>
+      </li>
+      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
+        <Link to="/services/market-research">Market Research</Link>
+      </li>
+    </ul>
           </div>
           <div>
             <h3 className="text-[#37B6FF] text-lg sm:text-xl font-bold">Company</h3>
             <ul className="flex flex-col space-y-2 text-gray-300 text-sm sm:text-base">
-              <NavLink to="/about" className="hover:text-gray-400 cursor-pointer transition duration-300">About Us</NavLink>
-              <NavLink to="/careers" className="hover:text-gray-400 cursor-pointer transition duration-300">Careers</NavLink>
-              <NavLink to="/partners" className="hover:text-gray-400 cursor-pointer transition duration-300">Partners</NavLink>
-              <NavLink to="/blogs" className="hover:text-gray-400 cursor-pointer transition duration-300">Blog</NavLink>
-              <NavLink to="/contact" className="hover:text-gray-400 cursor-pointer transition duration-300">Contact</NavLink>
+              <Link to="/about" className="hover:text-gray-400 cursor-pointer transition duration-300">About Us</Link>
+         
+              <Link to="/contact" className="hover:text-gray-400 cursor-pointer transition duration-300">Contact</Link>
             </ul>
           </div>
         </div>

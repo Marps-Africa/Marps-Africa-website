@@ -28,40 +28,46 @@ const content = {
       { title: "Web Development", imgSrc: image1 },
       { title: "Mobile App Development", imgSrc: image2 }
     ],
-    description: `Transforming ideas into digital reality. From building sleek websites to creating powerful mobile apps, our development services are crafted to propel your business forward in the digital age.`
+    description: `Transforming ideas into digital reality. From building sleek websites to creating powerful mobile apps, our development services are crafted to propel your business forward in the digital age.`,
+    link: "/services/software-development" 
+    
   },
   "Woo Commerce": {
     images: [
       { title: "WooCommerce Development", imgSrc: image3 },
       { title: "E-Commerce platforms", imgSrc: image4 },
     ],
-    description: `Elevate your e-commerce game with Woo Commerce. Our tailored solutions ensure a seamless shopping experience that boosts your online presence and sales.`
+    description: `Elevate your e-commerce game with Woo Commerce. Our tailored solutions ensure a seamless shopping experience that boosts your online presence and sales.`,
+    link: "/services/bulk-sms" 
   },
   "CRM Solutions": {
     images: [
       { title: "CRM Solutions", imgSrc: image5 },
       { title: "Dynamics 365", imgSrc: image6 }
     ],
-    description: `Streamline your customer interactions with our CRM solutions. Enhance relationships, boost productivity, and drive growth with tools designed for efficiency and success.`
+    description: `Streamline your customer interactions with our CRM solutions. Enhance relationships, boost productivity, and drive growth with tools designed for efficiency and success.`,
+    link: "/services/software-development" 
   },
   "Web Designing": {
     images: [
       { title: "Word Press", imgSrc: image7 },
       { title: "Custom Design", imgSrc: image8 },
     ],
-    description: `Craft stunning and user-friendly websites with our design expertise. We blend creativity with functionality to create web experiences that captivate and convert.`
+    description: `Craft stunning and user-friendly websites with our design expertise. We blend creativity with functionality to create web experiences that captivate and convert.`,
+    link: "/services/website-design" 
   },
   "IT Support": {
     images: [
-      { title: "IT Support", imgSrc: image9 },
+      { title: "Market Research", imgSrc: image9 },
       { title: "Consultations", imgSrc: image10 }
     ],
-    description: `Keep your technology running smoothly with our IT support. From troubleshooting to proactive maintenance, we ensure your systems are always at their best.`
+    description: `Keep your technology running smoothly with our IT support. From troubleshooting to proactive maintenance, we ensure your systems are always at their best.`,
+    link: "/services/market-research" 
   }
 };
 
 const TabContent = ({ selectedTab }) => {
-  const { images, description } = content[selectedTab] || {};
+  const { images, description, link } = content[selectedTab] || {};
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -87,7 +93,7 @@ const TabContent = ({ selectedTab }) => {
             <p className="text-gray-600 text-md mb-4">{description}</p>
             <div className='flex justify-end'>
               <Link 
-                to="" 
+                to={link || "#"} // Use link here for routing
                 className="self-start mt-2 bg-[#37B6FF] text-white h-10 w-10 text-center rounded-full shadow transition duration-300 flex items-center justify-center" 
                 onMouseEnter={() => setIsHovered(true)} 
                 onMouseLeave={() => setIsHovered(false)}
@@ -101,6 +107,7 @@ const TabContent = ({ selectedTab }) => {
     </div>
   );
 };
+
 
 const HomeServices = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);

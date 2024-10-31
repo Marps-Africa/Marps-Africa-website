@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaLaptopCode, FaMobileAlt, FaPalette, FaMoneyBillWave, FaChartBar, FaSms, FaLightbulb } from 'react-icons/fa';
 
-const ServicesDropdown = ({ isOpen, handleServiceClick }) => {
+const ServicesDropdown = ({ isOpen, handleServiceClick, closeDropdown }) => {
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    // Close dropdown on click outside
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Cleanup the event listener on component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeDropdown]);
+
   if (!isOpen) return null;
 
   const services = [
@@ -15,7 +33,7 @@ const ServicesDropdown = ({ isOpen, handleServiceClick }) => {
   ];
 
   return (
-    <div className="absolute bg-white shadow-lg z-20 mt-2 rounded-lg p-4 w-64">
+    <div ref={dropdownRef} className="absolute bg-white shadow-lg z-20 mt-2 rounded-lg p-4 w-64">
       <div className="grid grid-cols-1 gap-4">
         {services.map(({ path, label, icon }) => (
           <div
