@@ -9,10 +9,7 @@ const Footer = () => {
       {/* Top Section */}
       <div
         className="w-full px-6 py-8 lg:px-12 lg:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        style={{
-          background: "linear-gradient(135deg, #2d2f36, #1a1c22)",
-          backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")',
-        }}
+       
       >
         {/* Logo & Intro Section */}
         <div className="footer-section text-center sm:text-left space-y-4">

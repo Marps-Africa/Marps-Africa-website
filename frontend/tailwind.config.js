@@ -11,7 +11,7 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
       },
       colors:{
-        blues:{
+        primary:{
           100 : "#1351D8",
           200 : "#163F95"
         }

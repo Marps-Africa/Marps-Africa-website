@@ -32,7 +32,6 @@ const FadeInWhenVisible = ({ children }) => {
 export default function MarketResearch() {
   return (
     <div className="flex flex-col md:flex-row lg:ml-64">
-      <ServiceButtons className="md:w-1/4 lg:w-1/5 p-4" />
       <div className="flex-grow p-4 md:p-8 lg:p-12">
         <div className="max-w-4xl mx-auto space-y-8">
           <FadeInWhenVisible>

@@ -22,7 +22,7 @@ const countryCodes = [
   { name: "Germany", code: "+49" },
 ];
 
-const requiredWords = ["appointment", "schedule", "meeting"]; // Words that must be in the message
+const requiredWords = ["appointment", "schedule", "meeting"];
 
 const BookAppointment = () => {
   const [formData, setFormData] = useState({

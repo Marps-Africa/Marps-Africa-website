@@ -2,14 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ServiceButtons from "./ServiceButtons";
 
 const FadeInWhenVisible = ({ children }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
+  const [ref, inView] = useInView({ threshold: 0.1 });
   return (
     <motion.div
       ref={ref}
@@ -17,11 +12,7 @@ const FadeInWhenVisible = ({ children }) => {
       animate={inView ? "visible" : "hidden"}
       variants={{
         hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.6, ease: "easeOut" },
-        },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
       }}
     >
       {children}
@@ -30,224 +21,71 @@ const FadeInWhenVisible = ({ children }) => {
 };
 
 export default function SoftDev() {
+  const sections = [
+    {
+      title: "Welcome to MarpsAfrica",
+      content: "Empowering your business with tailored software solutions.",
+    },
+    {
+      title: "Mission",
+      content: "Delivering quality software that drives innovation.",
+    },
+    {
+      title: "Our Approach",
+      content:
+        "Collaborative and transparent development, from start to finish.",
+    },
+    {
+      title: "Quality Assurance",
+      content: "Rigorous testing ensures smooth deployment and reliability.",
+    },
+    {
+      title: "Client-Centric Solutions",
+      content: "Customized to align with your unique business goals.",
+    },
+  ];
+
   return (
     <div className="flex flex-col md:flex-row lg:ml-64">
-      <ServiceButtons className="md:w-1/4 lg:w-1/5 p-4" />
       <div className="flex-grow p-4 md:p-8 lg:p-12">
         <div className="max-w-4xl mx-auto space-y-8">
           <FadeInWhenVisible>
-            <h2 className="font-semibold text-2xl text-gray-800 py-2 text-center md:text-left lg:text-center sm:ml-10">
-              Software Development\
+            <h2 className="font-semibold text-3xl text-gray-800 py-2 text-center">
+              Software Development
             </h2>
           </FadeInWhenVisible>
 
-          {[1, 2, 3, 4, 5].map((index) => (
+          {sections.map((section, index) => (
             <FadeInWhenVisible key={index}>
-              <div className="flex flex-col md:flex-row rounded-lg p-4 gap-8 hover:bg-gray-200">
-                {index % 2 !== 0 ? (
-                  <>
-                    <motion.img
-                      src={`/images/softdev/image${index}.png`}
-                      alt=""
-                      className="rounded-lg w-full md:w-1/2 object-cover"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    />
-                    <div className="w-full md:w-1/2 space-y-4">
-                      {index === 1 && (
-                        <div className="space-y-4">
-                          <p>
-                            Welcome to{" "}
-                            <span className="font-bold">MarpsAfrica</span>: Your
-                            Partner in Quality Software Development.
-                          </p>
-                          <p>
-                            At MarpsAfrica, we know that the right software can
-                            transform your business in today's fast-paced
-                            digital world.
-                          </p>
-                          <p>
-                            Our <span className="font-bold">Mission</span> is
-                            clear: deliver robust, high-quality software that
-                            meets our clients' unique needs. We believe
-                            technology should empower businesses, boost
-                            productivity, and drive innovation.
-                          </p>
-                          <p>
-                            Our <span className="font-bold">Vision</span> is to
-                            be a leading software development partner in Africa
-                            and beyond.
-                          </p>
-                        </div>
-                      )}
-                      {index === 3 && (
-                        <div className="space-y-4">
-                          <p>
-                            <span className="font-bold">
-                              Expertise and Innovation
-                            </span>
-                          </p>
-                          <p>
-                            Our team consists of highly skilled software
-                            developers, designers, and project managers who are
-                            passionate about technology and its potential to
-                            drive change.
-                          </p>
-                          <p>
-                            We specialize in various domains, including web and
-                            mobile application development, cloud solutions, and
-                            enterprise software.
-                          </p>
-                          <p>
-                            By leveraging the latest technologies and
-                            methodologies, we create software that is not only
-                            functional but also user-friendly and scalable.
-                          </p>
-                          <p>
-                            Innovation is at the heart of what we do. We
-                            continuously explore emerging technologies such as
-                            artificial intelligence, machine learning, and
-                            blockchain to enhance our offerings.
-                          </p>
-                          <p>
-                            This commitment to innovation ensures that our
-                            clients receive solutions that are not only current
-                            but also future-proof.
-                          </p>
-                        </div>
-                      )}
-                      {index === 5 && (
-                        <div className="space-y-4">
-                          <p>
-                            <span className="font-bold">
-                              Client-Centric Solutions
-                            </span>
-                          </p>
-                          <p>
-                            We recognize that every business is unique, and so
-                            are its software needs.
-                          </p>
-                          <p>
-                            At MarpsAfrica, we pride ourselves on our ability to
-                            develop customized solutions that align with our
-                            clients' strategic goals.
-                          </p>
-                          <p>
-                            Whether it's a startup looking to build its first
-                            application or an established enterprise seeking to
-                            optimize existing systems, we have the expertise to
-                            deliver results.
-                          </p>
-                          <p>
-                            Our client-centric philosophy extends beyond just
-                            software development.
-                          </p>
-                          <p>
-                            We offer ongoing support and maintenance, ensuring
-                            that our solutions continue to perform effectively
-                            as our clients' businesses grow and evolve.
-                          </p>
-                          <p>
-                            We view our relationships with clients as
-                            partnerships, built on trust, communication, and a
-                            shared commitment to success.
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="w-full md:w-1/2 space-y-4 order-2 md:order-1">
-                      {index === 2 && (
-                        <div className="space-y-4">
-                          <p>
-                            <span className="font-bold">Our Approach</span>
-                          </p>
-                          <p>
-                            At MarpsAfrica, our development process is rooted in
-                            collaboration and transparency.
-                          </p>
-                          <p>
-                            Our collaborative approach with our clients allows
-                            us to tailor our software solutions precisely to
-                            their requirements.
-                          </p>
-                          <p>
-                            From the initial consultation to the final
-                            deployment, we maintain open lines of communication,
-                            ensuring that our clients are involved every step of
-                            the way.
-                          </p>
-                        </div>
-                      )}
-                      {index === 4 && (
-                        <div className="space-y-4">
-                          <p>
-                            <span className="font-bold">Quality Assurance</span>
-                          </p>
-                          <p>Quality is non-negotiable at MarpsAfrica.</p>
-                          <p>
-                            We implement rigorous testing and quality assurance
-                            processes to ensure that our software is reliable
-                            and performs optimally under various conditions.
-                          </p>
-                          <p>
-                            Our team conducts thorough testing at every stage of
-                            development, from unit testing to user acceptance
-                            testing.
-                          </p>
-                          <p>
-                            This meticulous approach allows us to identify and
-                            resolve potential issues before they reach our
-                            clients, guaranteeing a smooth deployment and a
-                            seamless user experience.
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                    <motion.img
-                      src={`/images/websitedesign/image${index}.png`}
-                      alt=""
-                      className="rounded-lg w-full md:w-1/2 object-cover order-1 md:order-2"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    />
-                  </>
-                )}
+              <div className="flex flex-col md:flex-row items-center rounded-lg p-6 hover:bg-gray-100 transition-transform duration-200 transform hover:scale-105">
+                <motion.img
+                  src={`/images/softdev/image${index + 1}.png`}
+                  alt=""
+                  className="rounded-lg w-full md:w-1/3 object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                />
+                <div className="w-full md:w-2/3 md:pl-8 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-blue-600">
+                    {section.title}
+                  </h3>
+                  <p className="mt-2 text-gray-700">{section.content}</p>
+                </div>
               </div>
             </FadeInWhenVisible>
           ))}
 
           <FadeInWhenVisible>
-            <div className="space-y-4 pt-4">
-              <p>
-                <span className="font-bold">Join Us on this Journey</span>
-              </p>
-              <p>
-                We are excited about the future of technology and its potential
-                to transform businesses across the continent. If you're looking
-                for a dedicated software development partner that prioritizes
-                quality, innovation, and client satisfaction, look no further.
-                Together, let's create robust software solutions that propel
-                your business forward. With MarpsAfrica, you're not just
-                choosing a software development company; you're choosing a
-                partner committed to your success. Let's embark on this journey
-                together.
-              </p>
+            <div className="flex justify-center mt-8">
+              <NavLink
+                to="/appointment"
+                className="bg-[#37B6FF] text-white px-6 py-3 rounded-full shadow-md hover:bg-gray-800 transition-transform transform hover:scale-105"
+              >
+                Book Appointment
+              </NavLink>
             </div>
           </FadeInWhenVisible>
         </div>
-        <FadeInWhenVisible>
-          <div className="flex justify-end mt-8">
-            <NavLink
-              to="/appoitment"
-              className="bg-[#37B6FF] text-white px-4 py-2 rounded hover:bg-gray-800"
-            >
-              Book Appointment
-            </NavLink>
-          </div>
-        </FadeInWhenVisible>
       </div>
     </div>
   );
