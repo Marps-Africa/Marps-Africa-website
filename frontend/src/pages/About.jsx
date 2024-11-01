@@ -4,23 +4,32 @@ import {
   FaLightbulb, FaNetworkWired, FaLock, FaBuilding,
   FaDollarSign, FaHandHoldingUsd
 } from 'react-icons/fa';
+import image from '../../public/images/homeimages/team-image.webp'
 
 export default function About() {
   return (
     <div>
       {/* Banner Section */}
-      <div className="relative w-full h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: `url('/src/assets/aboutUs.jpeg')` }}>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white text-left p-6 md:p-10 lg:p-20">
+      <div className="relative mx-auto h-[60vh] overflow-hidden">
+        {/* Background Image Container */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${image})`,
+            filter: "grayscale(70%)", // Optional: makes the image black and white
+          }}
+        >
+          {/* This container will have the image */}
+        </div>
+
+        {/* Overlay with Dark Background and Opacity */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start text-center p-8">
           <div className="font-sans">
-            <p className="text-xs md:text-sm font-thin tracking-wider">
-              <a href="/" className="hover:text-[#37B6FF] transition-colors duration-300">Home</a>
-            </p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight font-serif relative pb-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight font-serif relative pb-2 text-white underline">
               About Us
-              <span className="absolute left-0 bottom-0 w-1/4 border-t-4 border-[#37B6FF]"></span>
             </h1>
+            <p className="text-white text-md md:text-lg  max-w-2xl">
+            Explore Our Commitment to Excellence            </p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { FaCheckCircle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import image from "../../public/images/homeimages/handshake.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -71,19 +72,47 @@ const Contact = () => {
 
   return (
     <div>
-      <div>
+      {/* "About MARPS" Section with Background Image */}
+
+      <div className="relative mx-auto h-[60vh] overflow-hidden">
+        {/* Background Image Container */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${image})`,
+            filter: "grayscale(70%)", // Optional: makes the image black and white
+          }}
+        >
+          {/* This container will have the image */}
+        </div>
+
+        {/* Overlay with Dark Background and Opacity */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start text-center p-8">
+          <div className="font-sans">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight font-serif relative pb-2 text-white underline">
+              Contact Us
+            </h1>
+            <p className="text-white text-md md:text-lg  max-w-2xl">
+              We are open and ready to hear your queries
+            </p>
+          </div>
+        </div>
       </div>
+
+      {/* Contact Section */}
       <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg font-['Roboto']">
-                <h2 className="text-4xl font-bold text-center mb-10">We are always open to talk</h2>
+        <h2 className="text-4xl font-bold text-center mb-10">
+          We are always open to talk
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 space-y-6">
-            <h2 className="text-xl md:text-2xl font-bold text-blue-600  font-['Poppins']">
+            <h2 className="text-xl md:text-2xl font-bold text-blue-600 font-['Poppins']">
               Let’s level up your project, together
             </h2>
             <p className="text-gray-600 font-['Roboto']">
               You can reach us via email,{" "}
-              <a href="mailto:marpsafrica@gmail.com" className="text-blue-600 ">
+              <a href="mailto:marpsafrica@gmail.com" className="text-blue-600">
                 marpsafrica@gmail.com
               </a>
             </p>
@@ -184,45 +213,28 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="w-full p-3 border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
                   rows="5"
-                  placeholder="Hello, type your message here..."
-                  onFocus={(e) => (e.target.placeholder = "")}
-                  onBlur={(e) =>
-                    (e.target.placeholder =
-                      "Hello, this is Peter, I'd like to discuss project details...")
-                  }
-                />
+                  placeholder="Write a message"
+                ></textarea>
               </div>
-
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="ml-auto block px-6 py-3 bg-blue-600 text-white font-extrabold rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 font-inter text-sm md:text-base"
+                className="w-full bg-blue-600 hover:bg-blue-800 transition duration-300 ease-in-out text-white p-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
               >
-                {isSubmitting ? (
-                  <span className="flex items-center">
-                    <svg
-                      className="animate-spin h-5 w-5 mr-3"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 12a8 8 0 1116 0A8 8 0 014 12z"
-                      />
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  "Send Message"
-                )}
+                {isSubmitting ? "Sending..." : "Send"}
               </button>
+
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                closeOnClick
+                pauseOnHover
+                draggable
+              />
             </form>
           </div>
         </div>
-        <ToastContainer />
       </div>
     </div>
   );
