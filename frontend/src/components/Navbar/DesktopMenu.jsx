@@ -20,7 +20,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
       <div className="flex items-center space-x-8 px-6 py-4 text-black w-full">
         <NavLink
           to="/"
-          className="hover:text-primary-100 font-semibold transition-all duration-300 hover:underline"
+          className="hover:text-[#37B6FF] font-semibold transition-all duration-300 hover:underline"
         >
           Home
         </NavLink>
@@ -32,7 +32,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
           onMouseLeave={handleMouseLeave}
           ref={dropdownRef}
         >
-          <button className="flex items-center font-semibold transition-all duration-300 hover:text-primary-100">
+          <button className="flex items-center font-semibold transition-all duration-300 hover:text-[#37B6FF]">
             Services
             <FaChevronDown className="ml-1 transform transition-transform duration-300" />
           </button>
@@ -47,13 +47,13 @@ const DesktopMenu = ({ handleServiceClick }) => {
 
         <NavLink
           to="/about"
-          className="hover:text-primary-100 font-semibold transition-all duration-300 hover:underline"
+          className="hover:text-[#37B6FF] font-semibold transition-all duration-300 hover:underline"
         >
           About Us
         </NavLink>
         <NavLink
           to="/contact"
-          className="hover:text-primary-100 font-semibold transition-all duration-300 hover:underline"
+          className="hover:text-[#37B6FF] font-semibold transition-all duration-300 hover:underline"
         >
           Contact Us
         </NavLink>

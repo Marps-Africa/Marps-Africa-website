@@ -62,9 +62,9 @@ const ServicesDropdown = ({ handleServiceClick }) => {
           <div
             key={path}
             onClick={(e) => handleServiceClick(path, e)}
-            className="flex items-start space-x-3 p-3 cursor-pointer rounded-lg transition-all hover:text-blue-600 duration-300 ease-in-out transform hover:bg-blue-50 hover:scale-105"
+            className="flex items-start space-x-3 p-3 cursor-pointer rounded-lg transition-all hover:text-[#37B6FF] duration-300 ease-in-out transform hover:bg-blue-50 hover:scale-105"
           >
-            <div className="text-2xl text-blue-500">{icon}</div>
+            <div className="text-2xl text-[#37B6FF]">{icon}</div>
             <div>
               <span className="font-semibold text-gray-800">{label}</span>
               <p className="text-sm text-gray-500">{description}</p>
