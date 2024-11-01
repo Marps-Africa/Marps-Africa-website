@@ -56,7 +56,7 @@ const ServicesDropdown = ({ handleServiceClick }) => {
   ];
 
   return (
-    <div className="absolute bg-white shadow-lg z-20 mt-2 rounded-lg p-6 w-80 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-300 ease-out">
+    <div className="absolute bg-white shadow-lg z-20 mt-2 rounded-lg p-6 w-[100vw] opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-300 ease-out">
       <div className="grid grid-cols-1 gap-4">
         {services.map(({ path, label, description, icon }) => (
           <div

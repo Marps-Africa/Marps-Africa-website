@@ -42,7 +42,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className='relative h-[90vh] overflow-hidden mt-9'>
+    <section className='relative h-[100vh] mt-12 overflow-hidden '>
       <div className="relative w-full h-full">
         <img
           src={images[currentIndex].src}

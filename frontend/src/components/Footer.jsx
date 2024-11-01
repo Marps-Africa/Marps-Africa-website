@@ -1,98 +1,69 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
+import { NavLink } from "react-router-dom";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import logo from "../../public/images/logo/Marpslogowhite.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gray-900 text-gray-400">
       {/* Top Section */}
-      <div
-        className="w-full px-6 py-8 lg:px-12 lg:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-       
-      >
-        {/* Logo & Intro Section */}
-        <div className="footer-section text-center sm:text-left space-y-4">
-          <img
-            src={marpsxlogo2}
-            alt="Marps Logo"
-            className="h-14 w-auto mx-auto sm:mx-0"
-          />
-          <p className="text-gray-400 text-sm sm:text-base font-light leading-relaxed">
-            Spice up your business with our cutting-edge solutions...
+      <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
+        {/* Logo and Description */}
+        <div className="col-span-1 md:col-span-2">
+          <img src={logo} className="h-20" />
+          <p className="mt-2 text-gray-300">
+            Our beautiful designs open the door to a realm of limitless possibilities, where imagination knows no bounds.
           </p>
-
-          {/* SOCIAL ACCOUNTS */}
-          {/* <div className="flex justify-center sm:justify-start space-x-4 mt-4 text-xl font-bold">
-            <FaFacebookF className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
-            <FaTwitter className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
-            <FaLinkedinIn className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
-            <FaInstagram className="text-gray-400 hover:text-white transition duration-300 cursor-pointer" />
-          </div> */}
         </div>
 
-        {/* Services & Products Section */}
-        <div className="footer-section grid grid-cols-1 sm:grid-cols-2 gap-6 text-center sm:text-left">
+        {/* Links */}
+        <div className="grid grid-cols-1 md:col-span-3 md:grid-cols-2 gap-8">
+          {/* Company */}
           <div>
-            <h3 className="text-[#37B6FF] text-lg sm:text-xl font-bold">Our Services</h3>
-            <ul className="space-y-2 text-gray-300 text-sm sm:text-base">
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/software-development">Software Development</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/mobile-app-development">Mobile App Development</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/digital-marketing">Digital Marketing</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/website-design">Website Design</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/bulk-sms">Bulk SMS</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/payment-integration">Payment Integration</Link>
-      </li>
-      <li className="hover:text-[#37B6FF] hover:underline cursor-pointer transition duration-300">
-        <Link to="/services/market-research">Market Research</Link>
-      </li>
-    </ul>
-          </div>
-          <div>
-            <h3 className="text-[#37B6FF] text-lg sm:text-xl font-bold">Company</h3>
-            <ul className="flex flex-col space-y-2 text-gray-300 text-sm sm:text-base">
-              <Link to="/about" className="hover:text-gray-400 cursor-pointer transition duration-300">About Us</Link>
-         
-              <Link to="/contact" className="hover:text-gray-400 cursor-pointer transition duration-300">Contact</Link>
+            <h3 className="text-white font-semibold text-lg">Company</h3>
+            <ul className="mt-4 space-y-2">
+              <li><a href="/" className="hover:text-[#37B6FF] transition">About Us</a></li>
+              <li>
+                <a href="/" className="hover:text-[#37B6FF] transition flex items-center space-x-2">
+                  <span>Careers</span>
+                  <span className="bg-[#37B6FF] text-white text-xs font-bold py-1 px-2 rounded-full">Hiring</span>
+                </a>
+              </li>
+              <li><a href="/" className="hover:text-[#37B6FF] transition">Press</a></li>
+              <li><a href="/" className="hover:text-[#37B6FF] transition">Partners</a></li>
             </ul>
           </div>
-        </div>        
+        </div>
+
+        {/* Contact and Social Links */}
+        <div className="flex flex-col items-start md:col-span-1">
+          <h3 className="text-white font-semibold text-lg">Get in Touch</h3>
+          <p className="mt-4 text-gray-300">hello@company.com</p>
+          <div className="flex space-x-4 mt-4 text-2xl">
+            <a href="/" className="hover:text-[#37B6FF]"><FaFacebook /></a>
+            <a href="/" className="hover:text-[#37B6FF]"><FaTwitter /></a>
+            <a href="/" className="hover:text-[#37B6FF]"><FaInstagram /></a>
+          </div>
+        </div>
       </div>
 
-      <hr className="border-gray-600 my-0" />
+      <hr className="border-gray-600 my-4" />
 
       {/* Bottom Section */}
-      <div className="bg-gray-800">
+      <div className="bg-gray-900">
         <div className="text-center text-xs sm:text-sm py-4 px-6">
-          <p className="text-gray-400 font-bold">© 2024 MarpsAfrica. All rights reserved.</p>
+          <p className="text-gray-400 font-semibold">© 2024 MarpsAfrica. All rights reserved.</p>
           <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-2">
-            <NavLink to="/privacy-policy" className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300">
-              Privacy Policy
-            </NavLink>
-            <NavLink to="/terms-conditions" className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300">
-              Terms & Conditions
-            </NavLink>
-            <NavLink to="/cookies-policy" className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300">
-              Cookies Policy
-            </NavLink>
-            <NavLink to="/faq" className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300">
-              FAQ
-            </NavLink>
-            <NavLink to="/support" className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300">
-              Support
-            </NavLink>
-           </div>
+            {["Privacy Policy", "Terms & Conditions", "Cookies Policy", "FAQ", "Support"].map((link) => (
+              <NavLink
+                key={link}
+                to={`/${link.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
+                className="hover:text-white text-[#37B6FF] text-xs sm:text-sm font-medium transition duration-300"
+              >
+                {link}
+              </NavLink>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

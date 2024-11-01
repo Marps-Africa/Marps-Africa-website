@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import marpsxlogo2 from "/images/homeimages/marpsxlogo2.png";
+import marpslogo from "../../../public/images/logo/marpslogoblack.png";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
@@ -23,16 +23,16 @@ const Navbar = () => {
   const handleServiceClick = (path, e) => {
     e.preventDefault();
     navigate(path);
-    closeMenu(); // Close menu after navigating
+    closeMenu(); 
   };
 
   return (
-    <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-300 z-50">
+    <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-300 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link to="/">
-              <img className="h-14 w-auto" src={marpsxlogo2} alt="Logo" />
+          <div className="flex justify-center items-center">
+            <Link to="/" className="flex items-center">
+              <img className="h-12 w-auto" src={marpslogo} alt="Logo" />
             </Link>
           </div>
 
