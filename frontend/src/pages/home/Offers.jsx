@@ -5,7 +5,7 @@ function Offers() {
     <section className=" my-10 md:w-[80vw] mx-auto min-h-[90vh]  flex flex-col justify-between">
       <div className="container mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 ">
         <div>
-          <h3 className="text-lg lg:text-xl text-primary-100  font-semibold mb-1 lg:mb-2">
+          <h3 className="text-lg lg:text-xl text-primary-100  font-semibold mb-1 lg:mb-2 ">
             What We're Offering
           </h3>
           <h2 className="text-2xl lg:text-3xl font-bold leading-tight">

@@ -20,7 +20,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
 
   return (
     <div className="relative">
-      <div className="flex items-center space-x-8 px-6   text-black w-full">
+      <div className="flex items-center space-x-8 px-6 font-poppins  text-black w-full">
         <NavLink
           to="/"
           className="hover:text-primary-100 font-semibold transition-all duration-300 hover:underline"
@@ -34,7 +34,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <button className="flex items-center font-semibold transition-all duration-300 hover:text-">
+          <button className="flex items-center font-semibold  transition-all duration-300 hover:text-">
             Services
             <FaChevronDown className="ml-1 transform transition-transform duration-300" />
           </button>

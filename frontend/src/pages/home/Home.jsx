@@ -38,7 +38,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="relative w-full bg-slate-100 ">
+    <div className="relative w-full bg-gray-100 ">
       <HeroSection />
       <Offers />
       <ContactUs />

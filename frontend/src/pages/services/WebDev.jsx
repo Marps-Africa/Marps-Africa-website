@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ServiceButtons from "./ServiceButtons";
+import PageName from "../../components/PageName";
+import image from "/images/websitedesign/image3.png"
 
 const FadeInWhenVisible = ({ children }) => {
   const [ref, inView] = useInView({
@@ -31,7 +33,12 @@ const FadeInWhenVisible = ({ children }) => {
 
 export default function WebDev() {
   return (
-    <div className="flex flex-col md:flex-row lg:ml-64">
+    <div className="flex flex-col ">
+      <PageName
+        image={image}
+        title="Web Design & Development"
+        caption="Your Gateway to Stunning Online Presence."
+      />
       <div className="flex-grow p-4 md:p-8 lg:p-12">
         <div className="max-w-4xl mx-auto space-y-8">
           <FadeInWhenVisible>

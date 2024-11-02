@@ -9,11 +9,13 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         primary: {
-          100 : "#01ADEE",
-          200 : "#005AFF"
+          100: "#01ADEE",
+          200: "#005AFF"
         }
       },
       animation: {

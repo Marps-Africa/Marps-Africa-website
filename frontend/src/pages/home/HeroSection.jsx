@@ -50,8 +50,8 @@ const HeroSection = () => {
           className="w-full h-full object-cover grayscale"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-8 space-y-4">
-          <h3 className="text-xl text-white">{images[currentIndex].h3}</h3>
-          <h1 className="text-5xl text-white font-bold">
+          <h3 className="text-xl text-white font-montserrat">{images[currentIndex].h3}</h3>
+          <h1 className="text-5xl text-white font-bold ">
             {images[currentIndex].heading}
           </h1>
           <p className="text-lg text-white">

@@ -3,7 +3,8 @@ import emailjs from "emailjs-com";
 import { FaCheckCircle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import image from "../../public/images/homeimages/handshake.png";
+import image from "/images/homeimages/handshake.png";
+import PageName from "../components/PageName";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -71,52 +72,30 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <section className=" font-poppins">
       {/* "About MARPS" Section with Background Image */}
 
-      <div className="relative mx-auto h-[60vh] overflow-hidden">
-        {/* Background Image Container */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${image})`,
-            filter: "grayscale(70%)", // Optional: makes the image black and white
-          }}
-        >
-          {/* This container will have the image */}
-        </div>
-
-        {/* Overlay with Dark Background and Opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start text-center p-8">
-          <div className="font-sans">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight font-serif relative pb-2 text-white underline">
-              Contact Us
-            </h1>
-            <p className="text-white text-md md:text-lg  max-w-2xl">
-              We are open and ready to hear your queries
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <PageName image={image} title="Contact" caption="We are open and ready to hear your queries"/>
+    
       {/* Contact Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg border-2 font-['Roboto']">
-        <h2 className="text-4xl font-bold text-center mb-10">
-          We are always open to talk
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg border-2 ">
+        <h2 className="text-3xl font-bold text-left mb-2">
+          Talk to Us.
         </h2>
+        <p className="text-xl p-2">We strive to make each interaction with us both rewarding and enjoyable. Your questions, feedback, and ideas are highly valued, as they help us continually improve our services to better suit your needs. Whether you're interested in learning more about our offerings, need help with our solutions, or want to explore potential partnerships, we’re here to assist you.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 space-y-6">
             <h2 className="text-xl md:text-2xl font-bold text-primary-100 font-['Poppins']">
               Let’s level up your project, together
             </h2>
-            <p className="text-gray-600 font-['Roboto']">
+            <p className="text-gray-600 ">
               You can reach us via email,{" "}
               <a href="mailto:marpsafrica@gmail.com" className="text-primary-100 hover:text-primary-200" >
                 marpsafrica@gmail.com
               </a>
             </p>
-            <ul className="space-y-4 font-['Roboto']">
+            <ul className="space-y-4 ">
               <li className="flex items-center hover:bg-gray-100 p-2 rounded-lg transition-all">
                 <FaCheckCircle className="text-green-500 mr-3 text-xl" />
                 MarpsAfrica contacts you within 24h
@@ -165,7 +144,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="p-6 bg-gray-50 rounded-lg font-['Roboto']">
+          <div className="p-6 bg-gray-50 rounded-lg ">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -236,7 +215,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,11 +4,11 @@ import image4 from "/images/homeimages/teams.jpg";
 
 function ContactUs() {
   return (
-    <section className="p-2 md:p-10">
-      <div className="relative md:w-[80vw] mx-auto h-[50vh] rounded-lg overflow-hidden">
+    <section className="p-2 md:p-10 bg-[#222222] ">
+      <div className="relative md:w-[80vw] mx-auto h-[50vh] rounded-lg overflow-hidden   ">
         {/* Background Image Container */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center "
           style={{
             backgroundImage: `url(${image4})`,
             filter: "grayscale(100%)", // Optional: makes the image black and white

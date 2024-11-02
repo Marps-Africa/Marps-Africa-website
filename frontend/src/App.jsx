@@ -7,7 +7,7 @@ import Blogs from "./pages/blogs/Blogs";
 import BlogPost from "./pages/blogs/BlogPost";
 import Navba from "./pages/blogs/Nav";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import Portfolio from "./pages/Portfolio";
 import NoPage from "./pages/NoPage";
 import Book_Appoitment from "./pages/Book_Appoitment";

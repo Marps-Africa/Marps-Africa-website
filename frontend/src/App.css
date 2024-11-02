@@ -12,10 +12,4 @@
     transform: translateX(-100%);
   }
   
-body {
-  font-family: 'Montserrat', sans-serif; /* Default font */
-}
 
-h1, h2, h3 {
-  font-family: 'Roboto Condensed', sans-serif; /* Headings */
-}

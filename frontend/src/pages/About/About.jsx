@@ -12,54 +12,36 @@ import {
   FaDollarSign,
   FaHandHoldingUsd,
 } from "react-icons/fa";
-import image from "../../public/images/homeimages/team-image.webp";
+import image from "/images/homeimages/team-image.webp";
+import PageName from "../../components/PageName";
 
 export default function About() {
   return (
-    <div>
+    <div className="">
       {/* Banner Section */}
-      <div className="relative mx-auto h-[60vh] overflow-hidden">
-        {/* Background Image Container */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${image})`,
-            filter: "grayscale(70%)", // Optional: makes the image black and white
-          }}
-        >
-          {/* This container will have the image */}
-        </div>
-
-        {/* Overlay with Dark Background and Opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start text-center p-8">
-          <div className="font-sans">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight font-serif relative pb-2 text-white underline">
-              About Us
-            </h1>
-            <p className="text-white text-md md:text-lg  max-w-2xl">
-              Explore Our Commitment to Excellence{" "}
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageName title="About Us" image={image} caption="Explore Our Commitment to Excellence"/>
+    
 
       {/* Company Description Section */}
-      <div className="bg-gray-200 py-6 md:py-10 px-4 md:px-10 lg:px-20">
+      <div className="bg-gray-100 py-6 md:py-10 px-4 md:px-10 lg:px-20">
         <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed text-center mb-6 md:mb-8 font-thin">
-          MarpsAfrica Solutions is an innovative IT service provider engaging
-          its customer with hosted online applications and content. We recognize
-          the organic nature of IT systems and the increase in the rate of
-          change enabled by the Mobile, Internet, and globalization. We are a
-          leading provider of CSP technology while offering customer-oriented
-          and unique services that enable their competitive advantage.
+          <span className="font-semibold">MarpsAfrica Solutions</span> is an
+          innovative IT service provider, delivering hosted online applications
+          and content. We adapt to the evolving IT landscape driven by mobile,
+          internet, and globalization, offering unique CSP technology that
+          enhances customer competitiveness.
         </p>
         <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed text-center font-thin">
-          We build long-term relationships with customers in specific vertical
-          industry segments offering a full complement of competitive,
-          integrated package which customers can benefit from the mobile channel
-          by delivering services aimed at generating revenue, improving business
-          efficiency, and proactively managing relationships with customers
-          through personalized interaction.
+          We foster{" "}
+          <span className="font-semibold">long-term relationships</span> with
+          customers in specific industries, providing integrated packages that
+          enhance <span className="font-semibold">mobile service delivery</span>
+          , boost <span className="font-semibold">business efficiency</span>,
+          and enable{" "}
+          <span className="font-semibold">
+            personalized customer interactions
+          </span>
+          .
         </p>
       </div>
 
@@ -69,7 +51,7 @@ export default function About() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-left">
             <span className="relative inline-block">
               Why Choose Us
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
+              <span className="absolute bottom-0  left-0 w-1/2 h-1  bg-[#37B6FF]"></span>
             </span>
           </h2>
         </div>
@@ -132,12 +114,12 @@ export default function About() {
       </div>
 
       {/* Opportunity and Strategy Section */}
-      <div className="bg-gray-200 py-10 md:py-16 px-4 md:px-10 lg:px-20 flex flex-col lg:flex-row gap-10">
+      <div className="bg-gray-100 py-10 md:py-16 px-4 md:px-10 lg:px-20 flex flex-col lg:flex-row gap-10">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 relative inline-block">
             <span className="relative inline-block">
               Opportunity and Strategy
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
+              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-primary-100"></span>
             </span>
           </h2>
           <p className="text-xs md:text-sm lg:text-base text-gray-600 leading-relaxed mb-4">
@@ -183,14 +165,14 @@ export default function About() {
           </div>
         </div>
 
-        <div className="lg:w-1/2 bg-blue-200 py-10 md:py-16 px-4 md:px-10 lg:px-20">
+        <div className="lg:w-1/2 bg-blue-100 py-10 md:py-16 px-4 md:px-10 lg:px-20">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5 relative inline-block">
             <span className="relative inline-block">
               Our Expertise
-              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-[#37B6FF]"></span>
+              <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-primary-100"></span>
             </span>
           </h2>
-          <div className="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
+          <div className="bg-[#222222] p-4 md:p-6 rounded-lg shadow-lg">
             {[
               {
                 icon: <FaMobileAlt className="text-white text-2xl mr-3" />,

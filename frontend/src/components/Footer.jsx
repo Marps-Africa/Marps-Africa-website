@@ -84,11 +84,11 @@ const Footer = () => {
         </div>
 
         {/* Contact and Social Links */}
-        <div>
+        <div className="text-center">
           <h3 className="text-white font-semibold text-lg">Get in Touch</h3>
           <Link
             to="/contact"
-            className="hover:underline hover:text-primary-100  transition"
+            className="hover:underline hover:text-primary-100  transition "
           >
             Contact us
           </Link>

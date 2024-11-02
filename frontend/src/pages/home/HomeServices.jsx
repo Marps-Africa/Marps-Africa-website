@@ -124,8 +124,8 @@ const HomeServices = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <section>
-      <div className="w-full md:w-[90vw] lg:w-[80vw] mx-auto py-8 px-2 md:px-0">
+    <section className="">
+      <div className="w-full md:w-[90vw] lg:w-[80vw]  mx-auto py-8 px-2 md:px-0">
         <div className="text-center">
           <h1 className="text-lg uppercase tracking-wider text-[#37B6FF]">
             Our Services
