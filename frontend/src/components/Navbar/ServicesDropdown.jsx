@@ -60,42 +60,42 @@ const ServicesDropdown = ({ handleServiceClick }) => {
   return (
     <div className="fixed left-0 right-0 bg-white shadow-lg z-20 mt-2  font-montserrat">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
           <div className="space-y-2">
-            <h3 className="text-xl  font-openSans font-bold pb-2 ">
+            <h3 className="text-xl  font-openSans font-bold pb-2 underline text-center">
               Custom Software Solutions
             </h3>
             {services.slice(0, 2).map((service) => (
               <NavLink
                 key={service.path}
-                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-gray-200"
                 onClick={(e) => handleServiceClick(service.path, e)}
               >
                 <div className="mr-3 text-2xl text-primary-100 ">
                   {service.icon}
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h3 className="font-openSans font-semibold text-lg hover:underline ">
+                  <h3 className="font-openSans font-semibold text-lg  ">
                     {service.label}
                   </h3>
-                  <p className="text-md font-openSans">{service.description}</p>
+                  <p className="text-md font-openSans pb-2">{service.description}</p>
                 </div>
               </NavLink>
             ))}
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-openSans font-semibold pb-2">Web Services</h3>
+            <h3 className="text-xl font-openSans font-semibold pb-2 underline text-center">Web Services</h3>
             {services.slice(2, 4).map((service) => (
               <NavLink
                 key={service.path}
-                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-gray-200"
                 onClick={(e) => handleServiceClick(service.path, e)}
               >
                 <div className="mr-3 text-2xl text-primary-100 ">
                   {service.icon}
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h3 className="font-openSans font-semibold text-lg hover:underline">
+                  <h3 className="font-openSans font-semibold text-lg ">
                     {service.label}
                   </h3>
                   <p className="text-md">{service.description}</p>
@@ -104,18 +104,18 @@ const ServicesDropdown = ({ handleServiceClick }) => {
             ))}
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-openSans font-semibold pb-2">Special Services</h3>
+            <h3 className="text-xl font-openSans font-semibold pb-2 underline text-center">Special Services</h3>
             {services.slice(4).map((service) => (
               <NavLink
                 key={service.path}
-                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-gray-200"
                 onClick={(e) => handleServiceClick(service.path, e)}
               >
                 <div className="mr-3 text-2xl text-primary-100 ">
                   {service.icon}
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h3 className="font-openSans font-semibold text-lg hover:underline">
+                  <h3 className="font-openSans font-semibold text-lg ">
                     {service.label}
                   </h3>
                   <p className="text-sm">{service.description}</p>
@@ -123,19 +123,19 @@ const ServicesDropdown = ({ handleServiceClick }) => {
               </NavLink>
             ))}
           </div>
-          <div className="border-l border-l-gray-100 p-4 ">
+          <div className="border-l-2 border-l-gray-100 p-4 bg-gray-100 ">
             <div className="flex flex-col justify-center">
               <img src={ipad} alt="" />
-              <h5 className="text-center font-openSans font-semibold">Our product hits </h5>
-              <p className="text-center">Empowering you with premier solutions and support</p>
+              <h5 className="text-center font-montserrat text-lg font-bold">Our product hits </h5>
+              <p className="text-center font-poppins">Empowering you with premier solutions and support</p>
 
               <button className="flex justify-center">
                 <Link
                   to="/appoitment"
-                  className="bg-primary-100  hover:bg-primary-200 text-white py-2 px-5 pt-2 rounded-2xl "
+                  className="text-primary-100  hover:text-primary-200 underline font-montserrat text-md  mt-2 "
                 >
-                  {" "}
-                  Book Appointment
+                  
+                  Contact Us
                 </Link>
               </button>
             </div>

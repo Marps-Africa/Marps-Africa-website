@@ -34,7 +34,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <button className="flex items-center font-semibold  transition-all duration-300 hover:text-">
+          <button className="flex items-center font-semibold  transition-all duration-300 hover:text-primary-100">
             Services
             <FaChevronDown className="ml-1 transform transition-transform duration-300" />
           </button>
