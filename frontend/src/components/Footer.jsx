@@ -117,7 +117,7 @@ const Footer = () => {
           <p className="text-gray-400 font-semibold">
             © 2024 MarpsAfrica. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-2">
+          {/* <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-2">
             {[
               "Privacy Policy",
               "Terms & Conditions",
@@ -131,12 +131,12 @@ const Footer = () => {
                   .toLowerCase()
                   .replace(/ & /g, "-")
                   .replace(/ /g, "-")}`}
-                className="hover:underline hover:text-primary-100  transition duration-300 text-primary-100  text-xs sm:text-sm font-medium"
+                className="hover:underline hover:text-primary-100  transition duration-300 text-gray-400 text-xs sm:text-sm font-medium"
               >
                 {link}
               </NavLink>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
