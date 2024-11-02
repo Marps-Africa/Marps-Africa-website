@@ -8,6 +8,8 @@ import {
   FaSms,
   FaLightbulb,
 } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
+import ipad from "/images/homeimages/ipad.webp";
 
 const ServicesDropdown = ({ handleServiceClick }) => {
   const services = [
@@ -56,21 +58,89 @@ const ServicesDropdown = ({ handleServiceClick }) => {
   ];
 
   return (
-    <div className="absolute bg-white shadow-lg z-20 mt-2 rounded-lg p-6 w-[100vw] opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-300 ease-out">
-      <div className="grid grid-cols-1 gap-4">
-        {services.map(({ path, label, description, icon }) => (
-          <div
-            key={path}
-            onClick={(e) => handleServiceClick(path, e)}
-            className="flex items-start space-x-3 p-3 cursor-pointer rounded-lg transition-all hover:text-[#37B6FF] duration-300 ease-in-out transform hover:bg-blue-50 hover:scale-105"
-          >
-            <div className="text-2xl text-[#37B6FF]">{icon}</div>
-            <div>
-              <span className="font-semibold text-gray-800">{label}</span>
-              <p className="text-sm text-gray-500">{description}</p>
+    <div className="fixed left-0 right-0 bg-white shadow-lg z-20 mt-2 border-t font-normal">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold pb-2 ">
+              Custom Software Solutions
+            </h3>
+            {services.slice(0, 2).map((service) => (
+              <NavLink
+                key={service.path}
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                onClick={(e) => handleServiceClick(service.path, e)}
+              >
+                <div className="mr-3 text-2xl text-primary-100 ">
+                  {service.icon}
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-semibold text-lg hover:underline ">
+                    {service.label}
+                  </h3>
+                  <p className="text-md">{service.description}</p>
+                </div>
+              </NavLink>
+            ))}
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold pb-2">Web Services</h3>
+            {services.slice(2, 4).map((service) => (
+              <NavLink
+                key={service.path}
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                onClick={(e) => handleServiceClick(service.path, e)}
+              >
+                <div className="mr-3 text-2xl text-primary-100 ">
+                  {service.icon}
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-semibold text-lg hover:underline">
+                    {service.label}
+                  </h3>
+                  <p className="text-md">{service.description}</p>
+                </div>
+              </NavLink>
+            ))}
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold pb-2">Special Services</h3>
+            {services.slice(4).map((service) => (
+              <NavLink
+                key={service.path}
+                className="flex items-start h-20 px-4 py-2 text-sm  text-gray-700  hover:bg-slate-100"
+                onClick={(e) => handleServiceClick(service.path, e)}
+              >
+                <div className="mr-3 text-2xl text-primary-100 ">
+                  {service.icon}
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h3 className="font-semibold text-lg hover:underline">
+                    {service.label}
+                  </h3>
+                  <p className="text-sm">{service.description}</p>
+                </div>
+              </NavLink>
+            ))}
+          </div>
+          <div className="border-l border-l-gray-100 p-4 ">
+            <div className="flex flex-col justify-center">
+              <img src={ipad} alt="" />
+              {/* <h5 className="text-center font-semibold">Our product hits </h5>
+              <p className="text-center">For your product ideas contact us.</p> */}
+
+              <button className="flex justify-center">
+                <Link
+                  to="/contact"
+                  className="text-primary-100 hover:text-primary-200 py-2 px-5 underline  rounded-2xl "
+                >
+                  {" "}
+                  Contact us
+                </Link>
+              </button>
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

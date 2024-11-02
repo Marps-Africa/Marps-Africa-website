@@ -128,60 +128,60 @@ export default function BulkSms() {
                   </>
                 ) : (
                   <>
-                  <div className="w-full md:w-1/2 space-y-4 order-2 md:order-1">
-                    {index === 2 && (
-                      <div className="space-y-4">
-                        <p>
-                          <span className="font-bold">
-                            Why Choose Our Bulk SMS Service?
-                          </span>
-                        </p>
-                        <p>
-                          • High delivery rates ensuring your messages reach
-                          the intended recipients
-                        </p>
-                        <p>
-                          • User-friendly interface for easy campaign
-                          management
-                        </p>
-                        <p>
-                          • Scalable solutions suitable for businesses of all
-                          sizes
-                        </p>
-                        <p>• Competitive pricing with flexible packages</p>
-                        <p>
-                          • 24/7 customer support for uninterrupted service
-                        </p>
-                      </div>
-                    )}
-                    {index === 4 && (
-                      <div className="space-y-4">
-                        <p>
-                          <span className="font-bold">
-                            Compliance and Security
-                          </span>
-                        </p>
-                        <p>
-                          We prioritize the security and compliance of our
-                          bulk SMS services:
-                        </p>
-                        <p>
-                          • Adherence to local and international SMS
-                          regulations
-                        </p>
-                        <p>
-                          • Secure infrastructure to protect your data and
-                          contact lists
-                        </p>
-                        <p>
-                          • Spam prevention measures to maintain your brand
-                          reputation
-                        </p>
-                        <p>• Regular security audits and updates</p>
-                        <p>• GDPR compliant practices for data protection</p>
-                      </div>
-                    )}
-                  </div>
+                    <div className="w-full md:w-1/2 space-y-4 order-2 md:order-1">
+                      {index === 2 && (
+                        <div className="space-y-4">
+                          <p>
+                            <span className="font-bold">
+                              Why Choose Our Bulk SMS Service?
+                            </span>
+                          </p>
+                          <p>
+                            • High delivery rates ensuring your messages reach
+                            the intended recipients
+                          </p>
+                          <p>
+                            • User-friendly interface for easy campaign
+                            management
+                          </p>
+                          <p>
+                            • Scalable solutions suitable for businesses of all
+                            sizes
+                          </p>
+                          <p>• Competitive pricing with flexible packages</p>
+                          <p>
+                            • 24/7 customer support for uninterrupted service
+                          </p>
+                        </div>
+                      )}
+                      {index === 4 && (
+                        <div className="space-y-4">
+                          <p>
+                            <span className="font-bold">
+                              Compliance and Security
+                            </span>
+                          </p>
+                          <p>
+                            We prioritize the security and compliance of our
+                            bulk SMS services:
+                          </p>
+                          <p>
+                            • Adherence to local and international SMS
+                            regulations
+                          </p>
+                          <p>
+                            • Secure infrastructure to protect your data and
+                            contact lists
+                          </p>
+                          <p>
+                            • Spam prevention measures to maintain your brand
+                            reputation
+                          </p>
+                          <p>• Regular security audits and updates</p>
+                          <p>• GDPR compliant practices for data protection</p>
+                        </div>
+                      )}
+                    </div>
                     <motion.img
                       src={`/images/bulksms/image${index}.png`}
                       alt={`Bulk SMS service illustration ${index}`}
@@ -231,7 +231,7 @@ export default function BulkSms() {
           <div className="flex justify-end mt-8">
             <NavLink
               to="/appoitment"
-              className="bg-[#37B6FF] text-white px-4 py-2 rounded hover:bg-gray-800"
+              className="bg-primary-100 text-white px-4 py-2 rounded hover:bg-gray-800"
             >
               Book Appointment
             </NavLink>

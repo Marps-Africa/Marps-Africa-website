@@ -5,7 +5,7 @@ import logo from "/images/logo/Marpslogowhite.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400">
+    <footer className="bg-[#222222] text-gray-400">
       {/* Top Section */}
       <div className="container md:w-[80vw] gap-6 mx-auto grid md:grid-cols-4 my-10 md:my-14 place-items-center">
         {/* Logo and Description */}
@@ -24,7 +24,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/mobile-app-development"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Mobile App Development
                 </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/payment-integration"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Payment Integration
                 </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/digital-marketing"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Digital Marketing
                 </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/bulk-sms"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Bulk SMS
                 </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/software-development"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Software Development
                 </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/market-research"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Market Research
                 </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services/website-design"
-                  className="hover:underline hover:text-[#37B6FF] transition"
+                  className="hover:underline hover:text-primary-100  transition"
                 >
                   Website Design
                 </Link>
@@ -88,7 +88,7 @@ const Footer = () => {
           <h3 className="text-white font-semibold text-lg">Get in Touch</h3>
           <Link
             to="/contact"
-            className="hover:underline hover:text-[#37B6FF] transition"
+            className="hover:underline hover:text-primary-100  transition"
           >
             Contact us
           </Link>
@@ -109,10 +109,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="border-gray-600 my-4" />
+      <hr className="border-gray-500 my-4" />
 
       {/* Bottom Section */}
-      <div className="bg-gray-900">
+      <div className="bg-[#222222]">
         <div className="text-center text-xs sm:text-sm py-4 px-6">
           <p className="text-gray-400 font-semibold">
             © 2024 MarpsAfrica. All rights reserved.
@@ -131,7 +131,7 @@ const Footer = () => {
                   .toLowerCase()
                   .replace(/ & /g, "-")
                   .replace(/ /g, "-")}`}
-                className="hover:underline hover:text-[#37B6FF] transition duration-300 text-[#37B6FF] text-xs sm:text-sm font-medium"
+                className="hover:underline hover:text-primary-100  transition duration-300 text-primary-100  text-xs sm:text-sm font-medium"
               >
                 {link}
               </NavLink>

@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-const NotPage = () => {
-  const [dots, setDots] = useState('');
-
-  // Dynamic effect for the dots in "Loading..." text
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDots((prev) => (prev.length < 3 ? prev + '.' : ''));
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
+const NoPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-[90vh] bg-gradient-to-br from-gray-200 to-gray-100">
-      <div className="text-center px-6 py-10  shadow-lg rounded-lg transform transition duration-500 ">
-        <h1 className="text-6xl font-extrabold text-blue-500 hover:text-blue-600 transition duration-300">
-          404
-        </h1>
-        <p className="mt-4 text-gray-700 text-2xl font-semibold">Oops! Page not found{dots}</p>
-        <p className="mt-2 text-gray-500 text-lg">
-          The page you’re looking for doesn’t exist or has been moved.
-        </p>
-        
-        <Link to="/">
-          <button className="mt-8 px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 focus:outline-none transition duration-300 transform hover:scale-110">
-            Go Back Home
-          </button>
-        </Link>
+    <div className="h-[80vh] flex flex-col items-center justify-center bg-slate-100">
+      {/* 404 Message */}
+      {/* <h1 className="text-8xl font-bold text-blue-600 animate-bounce">404</h1> */}
+      <h2 className="text-2xl font-semibold mt-2">Oops! Page not found</h2>
+      <p className="text-lg mt-2 text-gray-500">Looks like you've wandered off...</p>
+
+      {/* Fun Animation */}
+      <div className="mt-8 w-48 h-48 relative flex justify-center items-center">
+        <div className="absolute w-32 h-32 bg-blue-400 rounded-full animate-ping"></div>
+        <div className="absolute w-20 h-20 bg-blue-500 rounded-full animate-spin"></div>
+        <div className="absolute w-16 h-16 bg-blue-400 rounded-full"></div>
       </div>
+
+      {/* Go Back Button */}
+      <button
+        className="mt-8 px-6 py-2 text-white bg-blue-400 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-semibold rounded-full transition duration-300 ease-in-out"
+        onClick={() => window.location.href = '/'}>
+        Take Me Home
+      </button>
     </div>
   );
 };
 
-export default NotPage;
+export default NoPage;

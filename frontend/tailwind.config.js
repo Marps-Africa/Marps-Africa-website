@@ -12,8 +12,8 @@ export default {
       },
       colors: {
         primary: {
-          100 : "#1351D8",
-          200 : "#163F95"
+          100 : "#01ADEE",
+          200 : "#005AFF"
         }
       },
       animation: {

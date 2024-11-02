@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import image1 from '/images/homeimages/phone-app.jpeg';
-import image2 from '/images/homeimages/oldman.jpeg';
-import image3 from '/images/homeimages/team-image.webp';
-import { Link } from 'react-router-dom';
+import image1 from "/images/homeimages/phone-app.jpeg";
+import image2 from "/images/homeimages/oldman.jpeg";
+import image3 from "/images/homeimages/team-image.webp";
+import { Link } from "react-router-dom";
 
 // Image data for the carousel
 const images = [
@@ -42,7 +42,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className='relative h-[100vh]  overflow-hidden '>
+    <section className="relative h-[100vh]  overflow-hidden ">
       <div className="relative w-full h-full">
         <img
           src={images[currentIndex].src}
@@ -57,10 +57,12 @@ const HeroSection = () => {
           <p className="text-lg text-white">
             {images[currentIndex].subheading}
           </p>
-          <Link to="/contact" className="mt-2 bg-[#37B6FF] text-white px-5 py-2 rounded-xl shadow-md hover:bg-blue-500 transition duration-300">
-        Contact Us
-        </Link>
-
+          <Link
+            to="/contact"
+            className="mt-2 bg-primary-100 text-white px-5 py-2 rounded-xl shadow-md hover:bg-blue-500 transition duration-300"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
 

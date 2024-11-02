@@ -100,19 +100,19 @@ const Contact = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg font-['Roboto']">
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white mt-8 mb-8 rounded-lg border-2 font-['Roboto']">
         <h2 className="text-4xl font-bold text-center mb-10">
           We are always open to talk
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 space-y-6">
-            <h2 className="text-xl md:text-2xl font-bold text-blue-600 font-['Poppins']">
+            <h2 className="text-xl md:text-2xl font-bold text-primary-100 font-['Poppins']">
               Let’s level up your project, together
             </h2>
             <p className="text-gray-600 font-['Roboto']">
               You can reach us via email,{" "}
-              <a href="mailto:marpsafrica@gmail.com" className="text-blue-600">
+              <a href="mailto:marpsafrica@gmail.com" className="text-primary-100 hover:text-primary-200" >
                 marpsafrica@gmail.com
               </a>
             </p>
@@ -144,7 +144,7 @@ const Contact = () => {
                 href="https://www.google.com/maps/dir//Bazaar+Plaza,+Nairobi,+Kenya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-2 right-2 flex items-center bg-white p-2 rounded-lg shadow-lg text-blue-600 hover:text-blue-800 font-semibold text-xs md:text-sm transition-colors"
+                className="absolute top-2 right-2 flex items-center bg-white p-2 rounded-lg shadow-lg text-primary-100 hover:text-primary-100 font-semibold text-xs md:text-sm transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +178,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-primary-100  focus:border-primary-100  placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
                   placeholder="Marps Africa"
                   onFocus={(e) => (e.target.placeholder = "")}
                   onBlur={(e) => (e.target.placeholder = "MarpsAfrica")}
@@ -195,7 +195,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-primary-100  focus:border-primary-100  placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
                   placeholder="Marpsafrica@example.com"
                   onFocus={(e) => (e.target.placeholder = "")}
                   onBlur={(e) => (e.target.placeholder = "Marps@example.com")}
@@ -211,7 +211,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:ring-primary-100  focus:border-primary-100  placeholder-gray-500 transition duration-300 ease-in-out hover:shadow-lg"
                   rows="5"
                   placeholder="Write a message"
                 ></textarea>
@@ -219,7 +219,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-800 transition duration-300 ease-in-out text-white p-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
+                className="w-full bg-primary-100 hover:bg-primary-200 transition duration-300 ease-in-out text-white p-3 rounded-lg font-semibold flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? "Sending..." : "Send"}
               </button>

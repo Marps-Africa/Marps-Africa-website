@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
-import image4 from '/images/homeimages/teams.jpg'; 
+import React from "react";
+import { Link } from "react-router-dom";
+import image4 from "/images/homeimages/teams.jpg";
 
 function ContactUs() {
   return (
@@ -11,7 +11,7 @@ function ContactUs() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${image4})`,
-            filter: 'grayscale(100%)', // Optional: makes the image black and white
+            filter: "grayscale(100%)", // Optional: makes the image black and white
           }}
         >
           {/* This container will have the image */}
@@ -27,7 +27,7 @@ function ContactUs() {
             </h2>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-[#37B6FF]  rounded-md shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-primary-100  rounded-md shadow-sm hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-200"
             >
               Contact Us
             </Link>
