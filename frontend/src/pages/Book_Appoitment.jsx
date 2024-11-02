@@ -211,193 +211,170 @@ const BookAppointment = () => {
   };
 
   return (
-    <div className="max-w-3xl my-10 mx-auto px-4 py-8 sm:px-6 lg:px-8 bg-white shadow-lg border-2 border-gray-300">
-      <h2 className="text-3xl font-bold text-[#37B6FF] mb-6 text-center">
-        Book an Appointment
-      </h2>
+    <div className="max-w-2xl font-poppins my-8 mx-auto px-4 py-6 sm:px-5 lg:px-6 bg-white shadow-md border border-gray-300">
+  <h2 className="text-4xl font-bold text-primary-100 mb-4 text-center ">Contact</h2>
+  <p className="text-2xl font-semibold mb-4">Let's get in touch</p>
+  <p className="text-sm mb-4">
+    You can reach us anytime via <span className="text-primary-100 hover:text-primary-200">marpsafrica@gmail.com</span>
+  </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            disabled={isSubmitting}
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-            placeholder="Enter your name"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Email <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            disabled={isSubmitting}
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-            placeholder="Enter your email"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Phone Number <span className="text-red-500">*</span>
-          </label>
-          <div className="flex items-center">
-            <select
-              name="countryCode"
-              value={formData.countryCode}
-              onChange={handleCountryCodeChange}
-              disabled={isSubmitting}
-              className="w-20 p-2 border border-gray-300 rounded-l-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-            >
-              {countryCodes.map((code) => (
-                <option key={code.code} value={code.code}>
-                  {code.name} ({code.code})
-                </option>
-              ))}
-            </select>
-            <input
-              id="phone"
-              type="text"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              disabled={isSubmitting}
-              className="w-full p-3 border border-gray-300 rounded-r-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-              placeholder="Enter your phone number"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="appointmentDate"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Appointment Date <span className="text-red-500">*</span>
-          </label>
-          <DatePicker
-            id="appointmentDate"
-            selected={formData.appointmentDate}
-            onChange={handleDateChange}
-            dateFormat="MMMM d, yyyy"
-            minDate={new Date()}
-            filterDate={(date) => !isDateDisabled(date)}
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-            placeholderText="Choose the date"
-          />
-          {formattedDate && (
-            <p className="text-gray-600 mt-2">Selected Date: {formattedDate}</p>
-          )}
-          {validationErrors.date && (
-            <p className="text-red-500 mt-2">{validationErrors.date}</p>
-          )}
-        </div>
-
-        <div>
-          <label
-            htmlFor="appointmentTime"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Appointment Time <span className="text-red-500">*</span>
-          </label>
-          <select
-            id="appointmentTime"
-            name="appointmentTime"
-            value={formData.appointmentTime}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-          >
-            <option value="">Select Time</option>
-            {availableHours.map((hour) => (
-              <option key={hour} value={`${hour}:00`}>
-                {hour}:00
-              </option>
-            ))}
-          </select>
-          {validationErrors.time && (
-            <p className="text-red-500 mt-2">{validationErrors.time}</p>
-          )}
-        </div>
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Message <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            disabled={isSubmitting}
-            rows="4"
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
-            placeholder="Enter your message"
-          />
-          {validationErrors.message && (
-            <p className="text-red-500 mt-2">{validationErrors.message}</p>
-          )}
-        </div>
-
-        <div>
-          <label
-            htmlFor="document"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Upload Document (optional)
-          </label>
-          <input
-            id="document"
-            type="file"
-            name="document"
-            accept=".pdf"
-            onChange={handleChange}
-            disabled={isSubmitting}
-            className="w-full border border-gray-300 rounded-lg shadow-sm file:border-0 file:bg-[#37B6FF] file:text-white file:py-2 file:px-4 file:rounded-lg file:text-sm transition duration-150 ease-in-out"
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`w-full bg-[#37B6FF] text-white py-2 px-4 rounded-lg shadow-sm hover:bg-blue-700 transition duration-150 ease-in-out ${
-            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-        >
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </button>
-      </form>
-
-      <ToastContainer />
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <div>
+      <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-1">
+        Name <span className="text-red-500">*</span>
+      </label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+        disabled={isSubmitting}
+        className="w-full p-2 border border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+        placeholder="Enter your name"
+      />
     </div>
+
+    <div>
+      <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-1">
+        Email <span className="text-red-500">*</span>
+      </label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+        disabled={isSubmitting}
+        className="w-full p-2 border border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <div>
+      <label htmlFor="phone" className="block text-xs font-medium text-gray-700 mb-1">
+        Phone Number <span className="text-red-500">*</span>
+      </label>
+      <div className="flex items-center">
+        <select
+          name="countryCode"
+          value={formData.countryCode}
+          onChange={handleCountryCodeChange}
+          disabled={isSubmitting}
+          className=" p-2 mr-2 border border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+        >
+          {countryCodes.map((code) => (
+            <option key={code.code} value={code.code}>
+              {code.name} ({code.code})
+            </option>
+          ))}
+        </select>
+        <input
+          id="phone"
+          type="text"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          disabled={isSubmitting}
+          className="w-full p-2 border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+          placeholder="Enter your phone number"
+        />
+      </div>
+    </div>
+
+    <div className="md:grid md:grid-cols-2 gap-4">
+      <div className="md:col-span-1">
+        <label htmlFor="appointmentDate" className="block text-xs font-medium text-gray-700 mb-1">
+          Appointment Date <span className="text-red-500">*</span>
+        </label>
+        <DatePicker
+          id="appointmentDate"
+          selected={formData.appointmentDate}
+          onChange={handleDateChange}
+          dateFormat="MMMM d, yyyy"
+          minDate={new Date()}
+          filterDate={(date) => !isDateDisabled(date)}
+          className="w-full p-2 border border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+          placeholderText="Choose the date"
+        />
+        {formattedDate && <p className="text-gray-600 mt-1 text-xs">Selected Date: {formattedDate}</p>}
+        {validationErrors.date && <p className="text-red-500 mt-1 text-xs">{validationErrors.date}</p>}
+      </div>
+
+      <div className="md:col-span-1 ">
+        <label htmlFor="appointmentTime" className="block text-xs font-medium text-gray-700 mb-1">
+          Appointment Time <span className="text-red-500">*</span>
+        </label>
+        <select
+          id="appointmentTime"
+          name="appointmentTime"
+          value={formData.appointmentTime}
+          onChange={handleChange}
+          disabled={isSubmitting}
+          className=" p-2 border  w-full border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+        >
+          <option value="">Select Time</option>
+          {availableHours.map((hour) => (
+            <option key={hour} value={`${hour}:00`}>
+              {hour}:00
+            </option>
+          ))}
+        </select>
+        {validationErrors.time && <p className="text-red-500 mt-1 text-xs">{validationErrors.time}</p>}
+      </div>
+    </div>
+
+    <div>
+      <label htmlFor="message" className="block text-xs font-medium text-gray-700 mb-1">
+        Message <span className="text-red-500">*</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        required
+        disabled={isSubmitting}
+        rows="3"
+        className="w-full p-2 border border-gray-300  shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+        placeholder="Enter your message"
+      />
+      {validationErrors.message && <p className="text-red-500 mt-1 text-xs">{validationErrors.message}</p>}
+    </div>
+
+    <div>
+      <label htmlFor="document" className="block text-xs  font-medium text-gray-700 mb-1">
+        Upload Document (optional)
+      </label>
+      <input
+        id="document"
+        type="file"
+        name="document"
+        accept=".pdf"
+        onChange={handleChange}
+        disabled={isSubmitting}
+        className="w-full p-2 border border-gray-300  shadow-sm file:border-0 file:bg-primary-100 file:text-white file:py-1 file:px-3 file: file:text-xs transition duration-150 ease-in-out"
+      />
+    </div>
+
+    <button
+      type="submit"
+      disabled={isSubmitting}
+      className={`w-full bg-primary-100 text-white py-2 px-3  shadow-sm hover:bg-blue-700 transition duration-150 ease-in-out ${
+        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+    >
+      {isSubmitting ? "Submitting..." : "Submit"}
+    </button>
+  </form>
+
+  <ToastContainer />
+</div>
+
+
   );
 };
 

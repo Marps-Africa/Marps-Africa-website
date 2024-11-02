@@ -123,10 +123,10 @@ const ServicesDropdown = ({ handleServiceClick }) => {
               </NavLink>
             ))}
           </div>
-          <div className="border-l-2 border-l-gray-100 p-4 bg-gray-100 ">
+          <div className="border-l-2 border-l-gray-100   ">
             <div className="flex flex-col justify-center">
               <img src={ipad} alt="" />
-              <h5 className="text-center font-montserrat text-lg font-bold">Our product hits </h5>
+              <h5 className="text-center font-montserrat text-lg font-bold mt-2">Our product hits </h5>
               <p className="text-center font-poppins">Empowering you with premier solutions and support</p>
 
               <button className="flex justify-center">
@@ -135,7 +135,7 @@ const ServicesDropdown = ({ handleServiceClick }) => {
                   className="text-primary-100  hover:text-primary-200 underline font-montserrat text-md  mt-2 "
                 >
                   
-                  Contact Us
+                  Book Appointment
                 </Link>
               </button>
             </div>
