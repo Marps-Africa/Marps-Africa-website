@@ -39,16 +39,16 @@ const Navbar = () => {
     <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-300 z-50 h-[12vh]">
       {/* Container for nav content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-between h-[12vh] ">
           {/* Logo Section */}
-          <div className="flex justify-center items-center">
+          <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img className="h-12 w-auto" src={marpslogo} alt="Logo" />
             </Link>
           </div>
 
-          {/* Desktop Menu (only visible on medium screens and larger) */}
-          <div className="hidden md:flex">
+          {/* Centered Desktop Menu */}
+          <div className="hidden md:flex flex-grow justify-end ">
             <DesktopMenu
               isServicesOpen={isServicesOpen}
               toggleServices={() => setServicesOpen(!isServicesOpen)}

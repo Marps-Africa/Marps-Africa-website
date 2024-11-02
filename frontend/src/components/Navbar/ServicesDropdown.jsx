@@ -58,7 +58,7 @@ const ServicesDropdown = ({ handleServiceClick }) => {
   ];
 
   return (
-    <div className="fixed left-0 right-0 bg-white shadow-lg z-20 mt-2 border-t font-normal">
+    <div className="fixed left-0 right-0 bg-white shadow-lg z-20 mt-2  font-normal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="space-y-2">
@@ -132,7 +132,7 @@ const ServicesDropdown = ({ handleServiceClick }) => {
               <button className="flex justify-center">
                 <Link
                   to="/contact"
-                  className="text-primary-100 hover:text-primary-200 py-2 px-5 underline  rounded-2xl "
+                  className="text-primary-100 hover:text-primary-200 py-2 px-5 hover:underline  rounded-2xl "
                 >
                   {" "}
                   Contact us

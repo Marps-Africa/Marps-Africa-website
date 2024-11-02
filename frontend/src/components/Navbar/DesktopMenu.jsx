@@ -20,7 +20,7 @@ const DesktopMenu = ({ handleServiceClick }) => {
 
   return (
     <div className="relative">
-      <div className="flex items-center space-x-8 px-6 py-4 text-black w-full">
+      <div className="flex items-center space-x-8 px-6   text-black w-full">
         <NavLink
           to="/"
           className="hover:text-primary-100 font-semibold transition-all duration-300 hover:underline"
