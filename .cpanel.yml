@@ -1,7 +1,7 @@
 deployment:
   method: git
   remote: origin
-  branch: main  # or 'marps' if that's your working branch
+  branch: marps  # or 'marps' if that's your working branch
 
 build:
   commands:
