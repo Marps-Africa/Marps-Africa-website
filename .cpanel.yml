@@ -1,15 +1,16 @@
 deployment:
   method: git
   remote: origin
-  branch: marps  # or 'marps' if that's your working branch
+  branch: marps  # your working branch
 
 build:
   commands:
-    - cd frontend
-    - npm install   # Install dependencies
-    - npm run build # Build the project for production
+    - cd public_html/frontend         # Navigate to the frontend directory
+    - npm install                     # Install dependencies
+    - npm run build                   # Build the project for production
+    - mv dist/* ../                   # Move built files to public_html
 
 start:
   commands:
-    - cd frontend
-    - npm run serve # Start the production server (or the appropriate command for serving)
+    - cd public_html                  # Navigate to the public_html directory
+    - npm run serve                   # Start the production server (if applicable)
