@@ -21,19 +21,19 @@ import Research from "./pages/services/Research";
 import Home  from "./pages/home/Home";
 
 function App() {
-  const [loading, setLoading] = useState(true); 
+  // const [loading, setLoading] = useState(true); 
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); // Adjust the delay as needed
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000); // Adjust the delay as needed
 
-    return () => clearTimeout(timer); // Cleanup the timer on unmount
-  }, []);
+  //   return () => clearTimeout(timer); // Cleanup the timer on unmount
+  // }, []);
 
-  if (loading) {
-    return <Loader />; // Show the loader during the first load
-  }
+  // if (loading) {
+  //   return <Loader />; // Show the loader during the first load
+  // }
 
   return (
     <BrowserRouter>

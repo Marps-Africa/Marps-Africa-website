@@ -27,9 +27,9 @@ const MobileMenu = ({
   return (
     <div
       ref={menuRef}
-      className="fixed left-0 h-full w-3/4 bg-white border-t border-gray-200 py-4 overflow-y-auto z-50 transition-transform duration-300 transform translate-x-0 animate-slide-in"
+      className="fixed left-0 h-full w-full lg:w-3/4 bg-white border-t border-gray-200 py-4 overflow-y-auto z-50 transition-transform duration-300 transform translate-x-0 animate-slide-in"
     >
-      <div className="flex flex-col space-y-5"> {/* Space between NavLinks */}
+      <div className="flex flex-col space-y-5">
         <NavLink
           to="/"
           className="text-gray-700 hover:text-black font-medium px-4 transition-colors duration-300"

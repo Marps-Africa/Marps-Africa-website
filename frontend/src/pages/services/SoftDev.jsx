@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ServiceButtons from "./ServiceButtons";
 import PageName from "../../components/PageName";
-import image from "../../../public/images/softdev/image1.png";
 
 const FadeInWhenVisible = ({ children }) => {
   const [ref, inView] = useInView({
@@ -35,7 +34,7 @@ export default function SoftDev() {
   return (
     <div className="flex flex-col ">
       <PageName
-        image={image}
+        image="/images/softdev/image1.png" 
         title="Software Development"
         caption="Your Partner in Quality Software Development."
       />

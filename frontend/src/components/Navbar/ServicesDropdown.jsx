@@ -130,13 +130,13 @@ const ServicesDropdown = ({ handleServiceClick }) => {
               <p className="text-center font-poppins">Empowering you with premier solutions and support</p>
 
               <button className="flex justify-center">
-                <Link
-                  to="/appoitment"
+                <a href="https://sms.marps.co.ke/"
+                target="_blank"
                   className="text-primary-100  hover:text-primary-200 underline font-montserrat text-md  mt-2 "
                 >
                   
-                  Book Appointment
-                </Link>
+                  Check Out our Product
+                  </a>
               </button>
             </div>
           </div>

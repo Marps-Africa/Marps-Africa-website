@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 right-0 w-full bg-white border-b border-gray-300 z-50 h-[12vh]">
       {/* Container for nav content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="md:max-w-7xl xl:max-w-[80vw] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[12vh] ">
           {/* Logo Section */}
           <div className="flex-shrink-0">

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Offers() {
   return (
-    <section className=" my-10 md:w-[80vw] mx-auto min-h-[90vh]  flex flex-col justify-between">
+    <section className=" my-10 md:w-[80vw] mx-auto min-h-[90vh] lg:min-h-[60vh] h-auto flex flex-col justify-between">
       <div className="container mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 ">
         <div>
           <h3 className="text-lg lg:text-xl text-primary-100  font-semibold mb-1 lg:mb-2 ">
